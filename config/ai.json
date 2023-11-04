@@ -1,0 +1,13 @@
+{
+    "// ai": "ai adjustments",
+
+    "USEC_BEAR_RATIO": 0,
+    "FRIENDLY_PMC_PERC": 0,
+
+    "ai-1": "the following use min-max int values",
+
+    "SCAV_TO_PMC": [0, 0],
+    "CURSED_TO_PMC": [0, 0],
+    "RAIDER_TO_PMC": [0, 0],
+    "ROGUE_TO_PMC": [0, 0]
+}
