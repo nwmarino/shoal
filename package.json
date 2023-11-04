@@ -22,5 +22,9 @@
         "tsyringe": "4.8.0",
         "typescript": "5.1.6",
         "winston": "^3.9"
+    },
+    "dependencies": {
+        "fs": "^0.0.1-security",
+        "path": "^0.12.7"
     }
 }
