@@ -1,10 +1,10 @@
 {
-    "name": "GetSptConfigFile",
+    "name": "shoal",
     "version": "1.0.0",
     "main": "src/mod.js",
     "license": "MIT",
-    "author": "Chomp",
-    "akiVersion": "~3.7",
+    "author": "snt",
+    "akiVersion": "3.x.x",
     "scripts": {
         "setup": "npm i",
         "build": "node ./build.mjs",
