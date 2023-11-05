@@ -5,7 +5,7 @@ import { IPostAkiLoadMod } from "@spt-aki/models/external/IPostAkiLoadMod";
 //import { ConfigTypes } from "@spt-aki/models/enums/ConfigTypes";
 
 import * as npcConfig from "./config/npc.json";
-import NpcHandler from "./overrides/NpcHandler";
+import NpcHandler from "./overrides/npcHandler";
 
 const npcHandler = new NpcHandler();
 export default class Mod implements IPostDBLoadMod, IPostAkiLoadMod

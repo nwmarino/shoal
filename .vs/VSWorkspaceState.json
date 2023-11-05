@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\overrides"
   ],
-  "SelectedNode": "\\C:\\Users\\nwmar\\Source\\Repos\\shoal",
+  "SelectedNode": "\\src\\mod.ts",
   "PreviewInSolutionExplorer": false
 }

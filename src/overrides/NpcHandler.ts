@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { DependencyContainer } from "tsyringe";
 
-export default class NpcHandler
+export default class npcHandler
 {
     injFromConfig(container: DependencyContainer, config: any): void
     {
