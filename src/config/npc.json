@@ -1,0 +1,16 @@
+{
+  "ENABLED": false,
+
+  "USEC_BEAR_RATIO": 0,
+  "FRIENDLY_PMC_PERC": 0,
+  "MAX_BACKPACK_VALUE": 0,
+  "MAX_POCKET_VALUE": 0,
+  "MAX_VEST_VALUE": 0,
+
+  "NOTE": "the following take min/max integers",
+
+  "SCAV_TO_PMC": [ 0, 0 ],
+  "CURSED_TO_PMC": [ 0, 0 ],
+  "RAIDER_TO_PMC": [ 0, 0 ],
+  "ROGUE_TO_PMC": [ 0, 0 ]
+}

@@ -1,20 +1,22 @@
 import { DependencyContainer } from "tsyringe";
+import { IPostDBLoadMod } from "@spt-aki/models/external/IPostDBLoadMod";
+import { IPostAkiLoadMod } from "@spt-aki/models/external/IPostAkiLoadMod";
 //import { ConfigServer } from "@spt-aki/servers/ConfigServer";
 //import { ConfigTypes } from "@spt-aki/models/enums/ConfigTypes";
-import { IPostDBLoadMod } from "@spt-aki/models/external/IPostDBLoadMod";
 
-//import * as path from "path";
-//import * as fs from "fs";
-//import * as config from "./../config/config.json";
-import * as aiConfig from "../config/ai.json";
+import * as npcCFG from "./config/npc.json";
+import NpcHandler from "./overrides/NpcHandler";
 
-import { BotModule } from "./bot-modu";
-const botModule = new BotModule();
-
-export class Mod implements IPostDBLoadMod
+const npcHandler = new NpcHandler();
+export default class Mod implements IPostDBLoadMod, IPostAkiLoadMod
 {
     public postDBLoad(container: DependencyContainer): void
     {
-        botModule.inj(container, aiConfig);
+        injFromConfig()
+    }
+
+    public postAkiLoad(container: DependencyContainer): void
+    {
+
     }
 }
