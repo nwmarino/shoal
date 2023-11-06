@@ -1,0 +1,22 @@
+{
+  "SCAV_COOLDOWN": 1200,
+
+  "SURVIVED_EXP_MULT": 1.0,
+  "KILLED_EXP_MULT": 1.0,
+
+  "NOTE": "the following represent maximum player health values",
+
+  "HEAD_HP": 35,
+  "CHEST_HP": 85,
+  "STOMACH_HP": 70,
+  "LARM_HP": 60,
+  "RARM_HP": 60,
+  "LLEG_HP": 65,
+  "RLEG_HP": 65,
+
+  "SKILL FATIGUE": true,
+
+  "CHANCE_BASED_EXTRACTS": true,
+  "BASIC_COOP_EXTRACTS": false,
+  "BIPOLAR_EXTRACTS": false
+}
