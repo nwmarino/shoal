@@ -13,10 +13,6 @@ export default class sBot
         const boss = config["BOSS_HP_MULT"];
         const follower = config["FOLL_HP_MULT"];
         this.modifyHealth(bots.types, config, scav, special, boss, follower);
-        this.canHeadshot(bots, config);
-        this.canInstaReload(bots.types, config);
-        this.hasInfStamina(bots.types, config);
-        this.hasSilentMovement(bots.types, config);
     }
 
     static modifyHealth(bots: any, config: any, scav: number, spec: number, boss: number, foll: number): void
@@ -73,38 +69,5 @@ export default class sBot
                     }
             }
         }
-    }
-
-    static canHeadshot(bots: any, config: any): void
-    {
-        if (config["AI_CAN_HEADSHOT"]) return;
-        for (const type in bots)
-            bots[type].CAN_SHOOT_TO_HEAD = false;
-    }
-
-    static canInstaReload(bots: any, config: any): void
-    {
-        if (config["CAN_INSTANT_RELOAD"]) return;
-        for (const type in bots)
-            if (bots[type].skills.Common)
-                bots[type].skills.Common.BotReload = { "min": 0, "max": 0 };
-    }
-
-    static hasInfStamina(bots: any, config: any): void
-    {
-        if (config["HAS_INFINITE_STAMINA"]) return;
-        for (const type in bots)
-            if (bots[type].diffiulty)
-                for (const diff in bots[type].difficulty)
-                    if (bots[type].difficulty[diff].Move)
-                        bots[type].difficulty[diff].Move.ETERNITY_STAMINA = false;
-    }
-
-    static hasSilentMovement(bots: any, config: any): void
-    {
-        if (config["HAS_SILENT_MOVEMENT"]) return;
-        for (const type in bots)
-            if (bots[type].skills.Common)
-                bots[type].skills.Common.BotSound = { "min": 0, "max": 0 };
     }
 }

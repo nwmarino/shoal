@@ -13,10 +13,6 @@
   "ROGUE_TO_PMC": [ 0, 0 ],
 
   "BOT_WAVES": true,
-  "AI_CAN_HEADSHOT": true,
-  "CAN_INSTANT_RELOAD": true,
-  "HAS_INFINITE_STAMINA": true,
-  "HAS_SILENT_MOVEMENT": true,
 
   "SCAV_HP_MULT": 1.0,
   "SPEC_HP_MULT": 1.0,
