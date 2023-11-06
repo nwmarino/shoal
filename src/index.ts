@@ -16,6 +16,7 @@ export default class Index
 {
     inj(container: DependencyContainer): void
     {
+        if (!config["ENABLED"]) return;
         sBase.exec(container, config, gameConfig);
         sAirdrop.exec(container, miscConfig);
         sHideout.exec(container, config);
