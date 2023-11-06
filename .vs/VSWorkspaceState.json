@@ -6,10 +6,9 @@
     "\\src\\overrides",
     "\\types",
     "\\types\\models",
-    "\\types\\models\\eft",
-    "\\types\\models\\eft\\common",
-    "\\types\\models\\eft\\common\\tables"
+    "\\types\\models\\spt",
+    "\\types\\models\\spt\\server"
   ],
-  "SelectedNode": "\\types\\models\\eft\\common\\IPmcData.d.ts",
+  "SelectedNode": "\\types\\models\\spt\\server\\ILocations.d.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -50,9 +50,9 @@ export default class sBoss
         lighthouse.BossLocationSpawn[2].BossZone = config["LIGHTHOUSE_GOONS"][1];
 
         reserve.BossLocationSpawn[0].BossChance = config["GLUKHAR"][0];
-        reserve.BossLocationSpawn[0].Supports[0] = config["GLUKHAR"][1];
-        reserve.BossLocationSpawn[0].Supports[1] = config["GLUKHAR"][2];
-        reserve.BossLocationSpawn[0].Supports[2] = config["GLUKHAR"][0];
+        reserve.BossLocationSpawn[0].Supports[0].BossEscortAmount = config["GLUKHAR"][1];
+        reserve.BossLocationSpawn[0].Supports[1].BossEscortAmount = config["GLUKHAR"][2];
+        reserve.BossLocationSpawn[0].Supports[2].BossEscortAmount = config["GLUKHAR"][0];
 
         shoreline.BossLocationSpawn[2].BossChance = config["SANITAR"][0];
         shoreline.BossLocationSpawn[2].BossEscortAmount = config["SANITAR"][1];
