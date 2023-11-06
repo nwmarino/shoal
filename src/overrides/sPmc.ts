@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { DependencyContainer } from "tsyringe";
-
+import { ConfigServer } from "@spt-aki/servers/ConfigServer";
+import { ConfigTypes } from "@spt-aki/models/enums/ConfigTypes";
+import { IPmcConfig } from "@spt-aki/models/spt/config/IPmcConfig";
+import { ILocationConfig } from "@spt-aki/models/spt/config/ILocationConfig";
 export default class sPmc
 {
     static exec(container: DependencyContainer, config: any): void
     {
-        const pmc = container.resolve<any>("aki-pmc");
-        const location = container.resolve<any>("aki-location");
+        const configServer = container.resolve<ConfigServer>("ConfigServer");
+        const pmc = configServer.getConfig<IPmcConfig>(ConfigTypes.PMC);
+        const location = configServer.getConfig<ILocationConfig>(ConfigTypes.LOCATION);
         pmc.isUsec = config["USEC_BEAR_RATIO"];
         pmc.chanceSameSideIsHostilePercent = config["FRIENDLY_PMC_PERC"];
         pmc.maxBackpackLootTotalRub = config["MAX_BACKPACK_VALUE"];

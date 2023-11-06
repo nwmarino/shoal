@@ -9,3 +9,5 @@ export default class Mod implements IPostDBLoadMod
         index.inj(container);
     }
 }
+
+module.exports = { mod: new Mod() };
