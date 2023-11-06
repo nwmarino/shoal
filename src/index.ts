@@ -13,7 +13,6 @@ import sRaid from "./overrides/sRaid";
 import npcHandler from "./overrides/npcHandler";
 import exitHandler from "./modules/exitHandler";
 
-import LocalePatch from "./utils/LocalePatch";
 export default class Index
 {
     inj(container: DependencyContainer): void
@@ -28,8 +27,6 @@ export default class Index
         if (!gameConfig["PORT_SCAV_EXTRACTS"]) return;
         const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
         const locations = tables.locations;
-        const locales = tables.locales.global;
         new exitHandler(locations);
-        LocalePatch.run(locales);
     }
 }

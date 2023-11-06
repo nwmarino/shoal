@@ -7,18 +7,18 @@ export class ExitGenerator
         if (cost > 0) currency = "5449016a4bdc2d6f028b456f";
         const exitChance: number = enabled ? 100 : 0;
         const exit: object =
-        {
-            Name: name,
-            EntryPoints: "all",
+        {    
             Chance: exitChance,
             Count: cost,
+            EntryPoints: "all",
+            ExfiltrationTime: 8,
+            ExfiltrationType: "Individual",
             Id: currency,
             MinTime: 0,
             MaxTime: 0,
-            ExfiltrationType: "Individual",
+            Name: name,
             PassageRequirement: req,
             PlayersCount: 0,
-            ExfiltrationTime: 8,
             RequiredSlot: "FirstPrimaryWeapon",
             RequirementTip: ""
         }

@@ -20,7 +20,7 @@ export default class sExitPort
 
             if (scavExits)
                 for (const exit in scavExits)
-                    baseFile.exits.push(ExitGenerator.genExit(scavExits[exit], false, "None", 0))
+                    baseFile.exits.push(ExitGenerator.genExit(scavExits[exit], true, "None", 0))
         }
     }
 }

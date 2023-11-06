@@ -1,16 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { ILocations } from "../../types/models/spt/server/ILocations";
 import { ExitGenerator } from "./../utils/ExitGenerator";
-import Maps from "./../data/Maps";
+//import Maps from "./../data/Maps";
 import sExitPort from "./sExitPort";
 import { container } from "tsyringe";
 
-/* eslint-disable @typescript-eslint/naming-convention */
 export default class exitHandler
 {
     constructor(locations: ILocations)
     {
         sExitPort.port(container);
-        const mapNames = Maps.getMapNames();
+        /*const mapNames = Maps.getMapNames();
 
         for (const n in mapNames)
         {
@@ -28,8 +29,7 @@ export default class exitHandler
                 if (req == "TransferItem")
                     cost = 5000;
                 mapExits[exit] = ExitGenerator.genExit(exitName, true, req, cost)
-                logger.info(`Gen ${exitName}`);
             }
-        }
+        }*/
     }
 }
