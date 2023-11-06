@@ -4,7 +4,7 @@
   "SURVIVED_EXP_MULT": 1.0,
   "KILLED_EXP_MULT": 1.0,
 
-  "NOTE": "the following represent maximum player health values",
+  "NOTE (I)": "the following represent maximum player health values",
 
   "HEAD_HP": 35,
   "CHEST_HP": 85,
@@ -18,5 +18,9 @@
 
   "CHANCE_BASED_EXTRACTS": true,
   "BASIC_COOP_EXTRACTS": false,
-  "BIPOLAR_EXTRACTS": false
+  "BIPOLAR_EXTRACTS": false,
+
+  "NOTE (II)": "the following requires the included .dll file",
+
+  "PORT_SCAV_EXTRACTS": false
 }

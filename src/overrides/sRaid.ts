@@ -36,8 +36,7 @@ export default class sRaid
                     extraction.RequirementTip = "";
                     extraction.ExfiltrationTime = 8;
                     extraction.ExfiltrationType = "Individual";
-                }
-                    
+                }    
             }
         }
     }
@@ -58,6 +57,7 @@ export default class sRaid
         }
     }
 
+    // not original code, cr to open extracts
     static getAllEntryPoints(location: any): string
     {
         const entryPointsSet = new Set<string>();

@@ -9,6 +9,6 @@
     "\\types\\models\\spt",
     "\\types\\models\\spt\\server"
   ],
-  "SelectedNode": "\\types\\models\\spt\\server\\ILocations.d.ts",
+  "SelectedNode": "\\src\\overrides\\sBoss.ts",
   "PreviewInSolutionExplorer": false
 }
