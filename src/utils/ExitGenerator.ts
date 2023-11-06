@@ -4,7 +4,7 @@ export class ExitGenerator
     {
         if (req == "TransferItem" && cost == 0) req = "None"
         let currency: string = "";
-        if (cost > 0) currency = "roubles";
+        if (cost > 0) currency = "5449016a4bdc2d6f028b456f";
         const exitChance: number = enabled ? 100 : 0;
         const exit: object =
         {

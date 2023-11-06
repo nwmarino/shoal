@@ -2,7 +2,6 @@ import { ILocations } from "../../types/models/spt/server/ILocations";
 import { ExitGenerator } from "./../utils/ExitGenerator";
 import Maps from "./../data/Maps";
 import sExitPort from "./sExitPort";
-import { ILogger } from "@spt-aki/models/spt/utils/ILogger";
 import { container } from "tsyringe";
 
 /* eslint-disable @typescript-eslint/naming-convention */
@@ -10,7 +9,6 @@ export default class exitHandler
 {
     constructor(locations: ILocations)
     {
-        const logger = container.resolve<ILogger>("WinstonLogger");
         sExitPort.port(container);
         const mapNames = Maps.getMapNames();
 

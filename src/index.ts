@@ -12,6 +12,8 @@ import sHideout from "./overrides/sHideout";
 import sRaid from "./overrides/sRaid";
 import npcHandler from "./overrides/npcHandler";
 import exitHandler from "./modules/exitHandler";
+
+import LocalePatch from "./utils/LocalePatch";
 export default class Index
 {
     inj(container: DependencyContainer): void
@@ -23,10 +25,11 @@ export default class Index
         sRaid.exec(container, gameConfig);
         npcHandler.exec(container, npcConfig);
 
-        if (gameConfig["PORT_SCAV_EXTRACTS"])
-        {
-            const locations = container.resolve<DatabaseServer>("DatabaseServer").getTables().locations;
-            new exitHandler(locations);
-        }
+        if (!gameConfig["PORT_SCAV_EXTRACTS"]) return;
+        const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
+        const locations = tables.locations;
+        const locales = tables.locales.global;
+        new exitHandler(locations);
+        LocalePatch.run(locales);
     }
 }
