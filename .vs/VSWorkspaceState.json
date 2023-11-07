@@ -2,7 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\data",
+    "\\src\\config",
     "\\src\\modules",
     "\\src\\overrides",
     "\\src\\utils",
@@ -11,6 +11,5 @@
     "\\types\\models\\spt",
     "\\types\\models\\spt\\server"
   ],
-  "SelectedNode": "\\src\\modules\\sExitPort.ts",
   "PreviewInSolutionExplorer": false
 }
