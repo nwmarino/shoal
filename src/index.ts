@@ -23,10 +23,5 @@ export default class Index
         sHideout.exec(container, config);
         sRaid.exec(container, gameConfig);
         npcHandler.exec(container, npcConfig);
-
-        if (!gameConfig["PORT_SCAV_EXTRACTS"]) return;
-        const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
-        const locations = tables.locations;
-        new exitHandler(locations);
     }
 }
