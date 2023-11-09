@@ -2,13 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\config",
-    "\\src\\modules",
-    "\\src\\overrides",
+    "\\src\\data",
     "\\src\\utils",
-    "\\types\\generators\\weapongen",
-    "\\types\\models\\eft\\common\\tables"
+    "\\types\\models",
+    "\\types\\routers\\dynamic",
+    "\\types\\routers\\item_events",
+    "\\types\\routers\\save_load",
+    "\\types\\routers\\serializers",
+    "\\types\\routers\\static"
   ],
-  "SelectedNode": "\\src\\mod.ts",
+  "SelectedNode": "\\src\\modules\\exitHandler.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -8,7 +8,7 @@ import { ILocations } from "@spt-aki/models/spt/server/ILocations";
 
 import ExitPatch from "./ExitPatch";
 import Maps from "../data/Maps";
-import * as tooltips from "../data/tooltips.json";
+//import * as tooltips from "../data/tooltips.json";
 import { ExitGenerator } from "../utils/ExitGenerator";
 
 export default class ExitHandler
@@ -18,10 +18,10 @@ export default class ExitHandler
         const tables: IDatabaseTables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
         const locations: ILocations = tables.locations;
         const mapNames: string[] = Maps.getMapNames();
-        const locales: Record<string, string> = tables.locales.global["en"];
+        //const locales: Record<string, string> = tables.locales.global["en"];
         ExitPatch.patch(container);
         this.modExits(locations, mapNames);
-        this.modLocales(locales);
+        //this.modLocales(locales);
     }
 
     private modExits(locations: ILocations, mapNames: string[]): void
@@ -52,10 +52,10 @@ export default class ExitHandler
         }
     }
 
-    // modifies exits names based on tooltips.json
+    /*/ modifies exits names based on tooltips.json
     private modLocales(locales: Record<string, string>): void
     {
         for (const key in tooltips)
             locales[key] = tooltips[key]
-    }
+    }*/
 }
