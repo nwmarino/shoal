@@ -6,10 +6,9 @@
     "\\src\\modules",
     "\\src\\overrides",
     "\\src\\utils",
-    "\\types",
-    "\\types\\models",
-    "\\types\\models\\spt",
-    "\\types\\models\\spt\\server"
+    "\\types\\generators\\weapongen",
+    "\\types\\models\\eft\\common\\tables"
   ],
+  "SelectedNode": "\\src\\mod.ts",
   "PreviewInSolutionExplorer": false
 }
