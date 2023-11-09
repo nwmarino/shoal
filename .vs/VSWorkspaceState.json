@@ -1,16 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\data",
-    "\\src\\utils",
-    "\\types\\models",
-    "\\types\\routers\\dynamic",
-    "\\types\\routers\\item_events",
-    "\\types\\routers\\save_load",
-    "\\types\\routers\\serializers",
-    "\\types\\routers\\static"
+    "\\src"
   ],
-  "SelectedNode": "\\src\\modules\\exitHandler.ts",
+  "SelectedNode": "\\src\\config",
   "PreviewInSolutionExplorer": false
 }

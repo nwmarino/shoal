@@ -28,28 +28,52 @@ export default class ExitHandler
     {
         for (const key in mapNames)
         {
-            const mapName: string = mapNames[key];
-            const mapBase: ILocationBase = locations[mapName].base;
-            const mapExits: Exit[] = mapBase.exits;
+            const map = locations[key].base as ILocationBase;
 
-            for (const exit in mapExits)
+            for (const exit of map.exits)
             {
-                const exitName: string = mapExits[exit].Name;
-                const exitEnabled: boolean = true;
-                let exitRequirement: string = mapExits[exit].PassageRequirement ?? "None";
-                let carCost: number = 0;
+                this.indiscriminateExits(exit, map);
+                exit.ExfiltrationType = "Individual";
+                exit.PlayersCount = 0;
+                exit.Chance = 100;
 
-                // incase we have coop exits, etc.
-                if (exitRequirement !== "TransferItem" && exitRequirement !== "WorldEvent")
-                    exitRequirement = "None";
+                if (exit.PassageRequirement === "Train")
+                    continue;
 
-                // incase the exit is a car, make it 5k
-                if (exitRequirement == "TransferItem")
-                    carCost = 5000;
-
-                mapExits[exit] = ExitGenerator.genExit(exitName, exitEnabled, exitRequirement, carCost) as Exit;
+                this.convertCoopExits(exit);
             }
         }
+    }
+
+    // makes exits available from all spawn sides
+    private indiscriminateExits(exit: Exit, location: ILocationBase): void
+    {
+        const allSpawnPoints = this.getSides(location);
+
+        if (exit.EntryPoints !== allSpawnPoints)
+            exit.EntryPoints = allSpawnPoints;
+    }
+
+    // makes scav co-op exits regular pmc exits
+    private convertCoopExits(exit: Exit): void
+    {
+        if (exit.PassageRequirement !== "ScavCooperation")
+            return;
+
+        exit.PassageRequirement = "None";
+        exit.RequirementTip = "";
+    }
+
+    // yoinked from open extracts... credit to them
+    private getSides(location: ILocationBase): string
+    {
+        const entryPointsSet = new Set<string>();
+        for (const extract in location.exits)
+        {
+            const entryPoints = location.exits[extract].EntryPoints.split(",");
+            entryPoints.forEach((entryPoint: string) => entryPointsSet.add(entryPoint));
+        }
+        return Array.from(entryPointsSet).join(",");
     }
 
     /*/ modifies exits names based on tooltips.json

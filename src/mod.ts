@@ -4,6 +4,7 @@ import Index from "./index";
 
 const index = new Index();
 
+
 export default class Mod implements IPostDBLoadMod
 {
     public postDBLoad(container: DependencyContainer): void
