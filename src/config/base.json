@@ -1,7 +1,7 @@
 {
-  "ENABLED": true,
+  "ENABLED": false,
 
-  "TIME_TO_DEPLOY": 1,
+  "TIME_TO_DEPLOY": 20,
 
   "INSTANT_HIDEOUT_CONSTRUCTION": false,
   "CONSTRUCTION_TIME_MULT": 1.0,

@@ -5,11 +5,7 @@ import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 import { IDatabaseTables } from "@spt-aki/models/spt/server/IDatabaseTables";
 import { ILocationBase, Exit } from "@spt-aki/models/eft/common/ILocationBase";
 import { ILocations } from "@spt-aki/models/spt/server/ILocations";
-
 import ExitPatch from "./ExitPatch";
-import Maps from "../data/Maps";
-//import * as tooltips from "../data/tooltips.json";
-import { ExitGenerator } from "../utils/ExitGenerator";
 
 export default class ExitHandler
 {
@@ -17,16 +13,14 @@ export default class ExitHandler
     {
         const tables: IDatabaseTables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
         const locations: ILocations = tables.locations;
-        const mapNames: string[] = Maps.getMapNames();
-        //const locales: Record<string, string> = tables.locales.global["en"];
+        const mapNames: Set<string> = this.getMaps();
         ExitPatch.patch(container);
         this.modExits(locations, mapNames);
-        //this.modLocales(locales);
     }
 
-    private modExits(locations: ILocations, mapNames: string[]): void
+    private modExits(locations: ILocations, mapNames: Set<string>): void
     {
-        for (const key in mapNames)
+        for (const key of mapNames)
         {
             const map = locations[key].base as ILocationBase;
 
@@ -76,10 +70,20 @@ export default class ExitHandler
         return Array.from(entryPointsSet).join(",");
     }
 
-    /*/ modifies exits names based on tooltips.json
-    private modLocales(locales: Record<string, string>): void
+    // returns all valid map names
+    private getMaps(): Set<string>
     {
-        for (const key in tooltips)
-            locales[key] = tooltips[key]
-    }*/
+        return new Set<string>([
+            "bigmap",
+            "factory4_day",
+            "factory4_night",
+            "interchange",
+            "laboratory",
+            "lighthouse",
+            "rezervbase",
+            "shoreline",
+            "tarkovstreets",
+            "woods"
+        ]);
+    }
 }

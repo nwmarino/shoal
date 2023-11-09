@@ -1,25 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 export default class Exits
 {
-    // all car exits by precise name
-    static getCarExits(): {
-        "Dorms V-Ex": string;
-        "PP Exfil": string;
-        " V-Ex_light": string;
-        "E7_car": string;
-        "South V-Ex": string;
-    }
-    {
-        return {
-            "Dorms V-Ex": "customs",
-            "PP Exfil": "interchange",
-            " V-Ex_light": "lighthouse",
-            "E7_car": "streets",
-            "South V-Ex": "woods"
-        }
-    }
-
-    // all exits, scav and pmc, by precise name
     static getExitNames(map: string): {
         map: string[];
         pmc: string[];
