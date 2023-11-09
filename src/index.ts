@@ -23,5 +23,7 @@ export default class Index
         sHideout.exec(container, config);
         sRaid.exec(container, gameConfig);
         npcHandler.exec(container, npcConfig);
+        //if (!config["PORT_SCAV_EXTRACTS"]) return;
+        new exitHandler();
     }
 }
