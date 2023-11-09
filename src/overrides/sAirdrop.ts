@@ -4,6 +4,7 @@ import { ConfigServer } from "@spt-aki/servers/ConfigServer";
 import { ConfigTypes } from "@spt-aki/models/enums/ConfigTypes";
 import { IAirdropConfig } from "@spt-aki/models/spt/config/IAirdropConfig";
 
+// airdrop chances
 export default class sAirdrop
 {
     static exec(container: DependencyContainer, config: any): void

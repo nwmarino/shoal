@@ -4,6 +4,8 @@ import { ConfigServer } from "@spt-aki/servers/ConfigServer";
 import { ConfigTypes } from "@spt-aki/models/enums/ConfigTypes";
 import { IPmcConfig } from "@spt-aki/models/spt/config/IPmcConfig";
 import { ILocationConfig } from "@spt-aki/models/spt/config/ILocationConfig";
+
+// pmc bot related tweaks
 export default class sPmc
 {
     static exec(container: DependencyContainer, config: any): void

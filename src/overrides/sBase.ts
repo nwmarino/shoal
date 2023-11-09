@@ -2,6 +2,7 @@
 import { DependencyContainer } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 
+// general gameplay changes
 export default class sBase
 {
     static exec(container: DependencyContainer, baseConfig: any, gameConfig: any): void

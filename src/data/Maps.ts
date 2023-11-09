@@ -1,5 +1,6 @@
 export default class Maps
-{
+{   
+    // all valid map names
     static getMapNames(): Array<string>
     {
         return [

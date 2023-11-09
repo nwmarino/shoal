@@ -12,6 +12,7 @@ export default class sHideout
         this.productionInj(hideout.production, config);
     }
 
+    // modify hideout construction timings
     static constructionInj(areas: any, config: any): void
     {
         for (const area in areas)
@@ -27,6 +28,7 @@ export default class sHideout
             }
     }
 
+    // modify hideout production timings
     static productionInj(items: any, config: any): void
     {
         for (const item in items)

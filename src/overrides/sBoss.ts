@@ -2,6 +2,7 @@
 import { DependencyContainer } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 
+// run tweaks on boss chance, location(s), and follower counts
 export default class sBoss
 {
     static exec(container: DependencyContainer, config: any): void

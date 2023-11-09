@@ -1,5 +1,5 @@
 import { DependencyContainer } from "tsyringe";
-import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
+import { ILogger } from "@spt-aki/models/spt/utils/ILogger";
 
 import * as config from "./config/base.json";
 import * as gameConfig from "./config/game.json";
@@ -8,22 +8,30 @@ import * as npcConfig from "./config/npc.json";
 
 import sBase from "./overrides/sBase";
 import sAirdrop from "./overrides/sAirdrop";
+import sBoss from "./overrides/sBoss";
+import sBot from "./overrides/sBot";
 import sHideout from "./overrides/sHideout";
-import sRaid from "./overrides/sRaid";
-import npcHandler from "./overrides/npcHandler";
-import exitHandler from "./modules/exitHandler";
+import sPmc from "./overrides/sPmc";
+import ExitHandler from "./modules/ExitHandler";
 
 export default class Index
 {
     inj(container: DependencyContainer): void
     {
-        if (!config["ENABLED"]) return;
+        // resolve log
+        const logger = container.resolve<ILogger>("WinstonLogger")
+        if (!config["ENABLED"]) // incase shoal is disabled...
+        {
+            logger.info("shoal was unable to inject.");
+            return;
+        } // run all patches according to corresp. cfg
         sBase.exec(container, config, gameConfig);
         sAirdrop.exec(container, miscConfig);
+        sBoss.exec(container, npcConfig);
+        sBot.exec(container, npcConfig);
         sHideout.exec(container, config);
-        sRaid.exec(container, gameConfig);
-        npcHandler.exec(container, npcConfig);
-        //if (!config["PORT_SCAV_EXTRACTS"]) return;
-        new exitHandler();
+        sPmc.exec(container, npcConfig);
+        if (!gameConfig["EXTRACT_MASTER"]) return;
+        new ExitHandler(); // handle exits
     }
 }

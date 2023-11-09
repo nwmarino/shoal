@@ -16,11 +16,5 @@
 
   "SKILL FATIGUE": true,
 
-  "CHANCE_BASED_EXTRACTS": true,
-  "BASIC_COOP_EXTRACTS": false,
-  "BIPOLAR_EXTRACTS": false,
-
-  "NOTE (II)": "the following requires the included .dll file",
-
-  "PORT_SCAV_EXTRACTS": false
+  "EXTRACT_MASTER": false
 }

@@ -2,23 +2,44 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { container } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
-import sExitPort from "./sExitPort";
+import { IDatabaseTables } from "../../types/models/spt/server/IDatabaseTables";
+import { ILocations } from "../../types/models/spt/server/ILocations";
+
+import ExitPatch from "./ExitPatch";
 import * as tooltips from "../data/tooltips.json";
 
-export default class exitHandler
+export default class ExitHandler
 {
     constructor()
     {
-        const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
-        const locales = tables.locales.global;
-        sExitPort.port(container);
-        //this.modLocales(locales);
+        const tables: IDatabaseTables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
+        const locales: Record<string, string> = tables.locales.global["en"];
+        ExitPatch.patch(container);
+        this.modLocales(locales);
     }
 
-    modLocales(locales: Record<string, Record<string, string>>): void
+    // force all exits to have guaranteed availability
+    private forceExitChance(locations: ILocations): void
     {
-        const dbLocales = locales["en"];
+
+    }
+
+    // to allow scav co-op exits to be used by lone pmcs
+    private modCoopExits(locations: ILocations): void
+    {
+
+    }
+
+    // to allow exits be accessable regardless of spawn
+    private nonPolarExits(locations: ILocations): void
+    {
+
+    }
+
+    // modifies exits names based on tooltips.json
+    private modLocales(locales: Record<string, string>): void
+    {
         for (const key in tooltips)
-            dbLocales[key] = tooltips[key]
+            locales[key] = tooltips[key]
     }
 }

@@ -15,6 +15,7 @@ export default class sBot
         this.modifyHealth(bots.types, config, scav, special, boss, follower);
     }
 
+    // modify health multipliers by configurated values, according to each bot type
     static modifyHealth(bots: any, config: any, scav: number, spec: number, boss: number, foll: number): void
     {
         if (scav == 1 && spec == 1 && boss == 1 && foll == 1) return;
