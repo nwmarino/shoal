@@ -5,7 +5,7 @@ import Index from "./index";
 const index = new Index();
 import exitHandler from "./modules/exitHandler";
 
-export default class Mod implements IPostDBLoadMod
+export default class Mod implements IPostDBLoadMod, IPostAkiLoadMod
 {
     public postDBLoad(container: DependencyContainer): void
     {
