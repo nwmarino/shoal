@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\gui",
+    "\\src\\config",
+    "\\src\\data",
+    "\\src\\modules",
+    "\\src\\overrides"
   ],
-  "SelectedNode": "\\src\\config",
   "PreviewInSolutionExplorer": false
 }

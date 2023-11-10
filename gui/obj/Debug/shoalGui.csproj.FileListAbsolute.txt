@@ -1,0 +1,10 @@
+M:\Repos\shoalGui\bin\Debug\shoalGui.exe.config
+M:\Repos\shoalGui\bin\Debug\shoalGui.exe
+M:\Repos\shoalGui\bin\Debug\shoalGui.pdb
+M:\Repos\shoalGui\obj\Debug\shoalGui.csproj.AssemblyReference.cache
+M:\Repos\shoalGui\obj\Debug\shoalGui.shoalGui.resources
+M:\Repos\shoalGui\obj\Debug\shoalGui.Properties.Resources.resources
+M:\Repos\shoalGui\obj\Debug\shoalGui.csproj.GenerateResource.cache
+M:\Repos\shoalGui\obj\Debug\shoalGui.csproj.CoreCompileInputs.cache
+M:\Repos\shoalGui\obj\Debug\shoalGui.exe
+M:\Repos\shoalGui\obj\Debug\shoalGui.pdb
