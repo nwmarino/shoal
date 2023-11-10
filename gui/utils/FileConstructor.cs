@@ -10,7 +10,7 @@ namespace shoalGui.utils
 {
     internal class FileConstructor
     {
-        internal static void writeToFile(Data data)
+        internal static void writeToFile(ConfigSchema data)
         {
             string json = JsonConvert.SerializeObject(data, Formatting.Indented);
             System.IO.File.WriteAllText("../../output/data.json", json);
