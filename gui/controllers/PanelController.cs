@@ -9,7 +9,7 @@ namespace shoalGui
 {
     internal class PanelController
     {
-        internal static Panel manageArgPanel(Panel currentPanel, Panel targetPanel)
+        public static Panel AppointForePanel(Panel currentPanel, Panel targetPanel)
         {
             if (currentPanel == null)
             {
