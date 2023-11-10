@@ -8,3 +8,13 @@ M:\Repos\shoalGui\obj\Debug\shoalGui.csproj.GenerateResource.cache
 M:\Repos\shoalGui\obj\Debug\shoalGui.csproj.CoreCompileInputs.cache
 M:\Repos\shoalGui\obj\Debug\shoalGui.exe
 M:\Repos\shoalGui\obj\Debug\shoalGui.pdb
+M:\Repos\shoal\gui\bin\Debug\shoalGui.exe.config
+M:\Repos\shoal\gui\bin\Debug\shoalGui.exe
+M:\Repos\shoal\gui\bin\Debug\shoalGui.pdb
+M:\Repos\shoal\gui\obj\Debug\shoalGui.csproj.AssemblyReference.cache
+M:\Repos\shoal\gui\obj\Debug\shoalGui.shoalGui.resources
+M:\Repos\shoal\gui\obj\Debug\shoalGui.Properties.Resources.resources
+M:\Repos\shoal\gui\obj\Debug\shoalGui.csproj.GenerateResource.cache
+M:\Repos\shoal\gui\obj\Debug\shoalGui.csproj.CoreCompileInputs.cache
+M:\Repos\shoal\gui\obj\Debug\shoalGui.exe
+M:\Repos\shoal\gui\obj\Debug\shoalGui.pdb
