@@ -13,17 +13,26 @@ namespace shoalGui
     public partial class shoalGui : Form
     {
         private Panel currentPanel;
-        private Panel[] availablePanels;
 
         public shoalGui()
         {
             InitializeComponent();
 
+            Panel[] availablePanels = { gamePanel,
+                                        raidPanel,
+                                        playerPanel,
+                                        botPanel,
+                                        traderPanel };
+
             foreach (Panel panel in availablePanels)
             {
+                panel.Dock = DockStyle.Fill;
                 panel.Hide();
             }
         }
 
         private void shoalGui_Load(object sender, EventArgs e) { }
+
+        private void traderPanel_Paint(object sender, PaintEventArgs e) { }
+    }
 }
