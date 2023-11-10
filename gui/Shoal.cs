@@ -12,9 +12,18 @@ namespace shoalGui
 {
     public partial class shoalGui : Form
     {
+        private Panel currentPanel;
+        private Panel[] availablePanels;
+
         public shoalGui()
         {
             InitializeComponent();
+
+            foreach (Panel panel in availablePanels)
+            {
+                panel.Hide();
+            }
         }
-    }
+
+        private void shoalGui_Load(object sender, EventArgs e) { }
 }

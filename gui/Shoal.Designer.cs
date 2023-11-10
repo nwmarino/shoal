@@ -43,6 +43,7 @@
             this.Name = "shoalGui";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "shoal";
+            this.Load += new System.EventHandler(this.shoalGui_Load);
             this.ResumeLayout(false);
 
         }

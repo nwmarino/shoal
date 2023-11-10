@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="controllers\PanelController.cs" />
     <EmbeddedResource Include="Shoal.resx">
       <DependentUpon>Shoal.cs</DependentUpon>
     </EmbeddedResource>
