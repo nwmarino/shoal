@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace shoalGui.models
+{
+    internal class ConfigSchema
+    {
+        string[] CustomsReshalaBoss;
+        string[] CustomsGoonsquadBoss;
+        string[] CustomsCultistBoss;
+        string[] WoodsShturmanBoss;
+        string[] WoodsGoonsquadBoss;
+        string[] WoodsCultistBoss;
+        string[] InterchangeKillaBoss;
+        string[] DayFactoryTagillaBoss;
+        string[] NightFactoryTagillaBoss;
+        string[] NightFactoryCultistBoss;
+        string[] LighthouseZryachiyBoss;
+        string[] LighthouseGoonsquadBoss;
+        string[] ShorelineSanitarBoss;
+        string[] ShorelineGoonsquadBoss;
+        string[] ShorelineCultistBoss;
+        string[] StreetsKabanBoss;
+        string[] StreetsKillaBoss;
+        string[] ReserveGlukharBoss;
+        int[] ScavengerToPmc;
+        int[] RaiderToPmc;
+        int[] RogueToPmc;
+        int TimeBeforeDeploying;
+        int ScavengerModeCooldown;
+        int HeadHitpoints;
+        int ChestHitpoints;
+        int StomachHitpoints;
+        int LeftArmHitpoints;
+        int RightArmHitpoints;
+        int LeftLegHitpoints;
+        int RightLegHitpoints;
+        int UsecToBearRatio;
+        int PmcFriendlyChance;
+        int PmcBackpackMaxValue;
+        int PmcPocketMaxValue;
+        int PmcVestMaxValue;
+        float HideoutConstructionTimeMultiplier;
+        float HideoutProductionTimeMultiplier;
+        float ExtractExperienceMultiplier;
+        float KilledExperienceMultiplier;
+        float CustomsAirdropChance;
+        float WoodsAirdropChance;
+        float LighthouseAirdropChance;
+        float ShorelineAirdropChance;
+        float StreetsAirdropChance;
+        float ReserveAirdropChance;
+        float InterchangeAirdropChance;
+        float ScavengerHealthMultiplier;
+        float SpecialBotHealthMultiplier;
+        float BossHealthMultiplier;
+        float BossFollowerHealthMultiplier;
+        bool DisableSkillFatigue;
+        bool ConvertCooperationExits;
+        bool AllowExitFromAnySide;
+        bool ForceAllExitsAvailable;
+        bool PatchScavengerExits;
+        bool InstantHideoutConstruction;
+        bool InstantShowoutProduction;
+        bool DisableCustomBotWaves;
+
+        int FenceItemCount;
+        int FleaMarketAccessLevel;
+        int VerticalCustomPocketSize;
+        int HorizontalCustomPocketSize;
+        float ItemWeightMultiplier;
+        float RepairPriceMultiplier;
+        bool RemoveKeyUseLimit;
+        bool FreeClothing;
+        bool AllowClothesFromAnySide;
+        bool RemoveFoundInRaidQuestConditions;
+        bool DisableTraderInsurance;
+        bool DisableFallDamage;
+        bool DisableEnergyHydrationDrain;
+        bool DisableRunThroughs;
+        bool AccessLabsWithoutCard;
+        bool ExtendRaidTimerToHour;
+        bool DisableFleaMarket;
+        bool EnableCustomPocketSize;
+        
+    }
+}

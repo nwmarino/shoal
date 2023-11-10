@@ -1,4 +1,6 @@
-﻿using System;
+﻿using shoalGui.models;
+using shoalGui.utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +31,9 @@ namespace shoalGui
                 panel.Dock = DockStyle.Fill;
                 panel.Hide();
             }
+            Data point = new Data("hello", "hi");
+            FileConstructor.writeToFile(point);
+
         }
 
         private void shoalGui_Load(object sender, EventArgs e) { }

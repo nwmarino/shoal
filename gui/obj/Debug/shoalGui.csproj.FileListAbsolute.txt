@@ -18,3 +18,6 @@ M:\Repos\shoal\gui\obj\Debug\shoalGui.csproj.GenerateResource.cache
 M:\Repos\shoal\gui\obj\Debug\shoalGui.csproj.CoreCompileInputs.cache
 M:\Repos\shoal\gui\obj\Debug\shoalGui.exe
 M:\Repos\shoal\gui\obj\Debug\shoalGui.pdb
+M:\Repos\shoal\gui\bin\Debug\Newtonsoft.Json.dll
+M:\Repos\shoal\gui\bin\Debug\Newtonsoft.Json.xml
+M:\Repos\shoal\gui\obj\Debug\shoalGui.csproj.CopyComplete
