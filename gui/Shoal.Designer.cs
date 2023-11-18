@@ -1,4 +1,6 @@
-﻿namespace shoalGui
+﻿using Gui.models;
+
+namespace Gui
 {
     partial class shoalGui
     {
@@ -30,15 +32,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(shoalGui));
             this.gamePanel = new System.Windows.Forms.Panel();
+            this.gameLabel = new System.Windows.Forms.Label();
             this.raidPanel = new System.Windows.Forms.Panel();
+            this.raidLabel = new System.Windows.Forms.Label();
             this.botPanel = new System.Windows.Forms.Panel();
+            this.botLabel = new System.Windows.Forms.Label();
             this.playerPanel = new System.Windows.Forms.Panel();
+            this.playerLabel = new System.Windows.Forms.Label();
             this.traderPanel = new System.Windows.Forms.Panel();
             this.tradersLabel = new System.Windows.Forms.Label();
-            this.playerLabel = new System.Windows.Forms.Label();
-            this.botLabel = new System.Windows.Forms.Label();
-            this.raidLabel = new System.Windows.Forms.Label();
-            this.gameLabel = new System.Windows.Forms.Label();
             this.shoalLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.shoalicon = new System.Windows.Forms.PictureBox();
@@ -58,6 +60,17 @@
             this.gamePanel.Size = new System.Drawing.Size(531, 548);
             this.gamePanel.TabIndex = 0;
             // 
+            // gameLabel
+            // 
+            this.gameLabel.AutoSize = true;
+            this.gameLabel.Font = new System.Drawing.Font("Borda 8", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameLabel.ForeColor = System.Drawing.Color.White;
+            this.gameLabel.Location = new System.Drawing.Point(460, 509);
+            this.gameLabel.Name = "gameLabel";
+            this.gameLabel.Size = new System.Drawing.Size(62, 21);
+            this.gameLabel.TabIndex = 1;
+            this.gameLabel.Text = "> Game";
+            // 
             // raidPanel
             // 
             this.raidPanel.Controls.Add(this.raidLabel);
@@ -65,6 +78,17 @@
             this.raidPanel.Name = "raidPanel";
             this.raidPanel.Size = new System.Drawing.Size(531, 548);
             this.raidPanel.TabIndex = 1;
+            // 
+            // raidLabel
+            // 
+            this.raidLabel.AutoSize = true;
+            this.raidLabel.Font = new System.Drawing.Font("Borda 8", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raidLabel.ForeColor = System.Drawing.Color.White;
+            this.raidLabel.Location = new System.Drawing.Point(462, 509);
+            this.raidLabel.Name = "raidLabel";
+            this.raidLabel.Size = new System.Drawing.Size(60, 21);
+            this.raidLabel.TabIndex = 1;
+            this.raidLabel.Text = "> Inraid";
             // 
             // botPanel
             // 
@@ -74,6 +98,17 @@
             this.botPanel.Size = new System.Drawing.Size(531, 548);
             this.botPanel.TabIndex = 2;
             // 
+            // botLabel
+            // 
+            this.botLabel.AutoSize = true;
+            this.botLabel.Font = new System.Drawing.Font("Borda 8", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botLabel.ForeColor = System.Drawing.Color.White;
+            this.botLabel.Location = new System.Drawing.Point(468, 509);
+            this.botLabel.Name = "botLabel";
+            this.botLabel.Size = new System.Drawing.Size(54, 21);
+            this.botLabel.TabIndex = 1;
+            this.botLabel.Text = "> Bots";
+            // 
             // playerPanel
             // 
             this.playerPanel.Controls.Add(this.playerLabel);
@@ -81,6 +116,18 @@
             this.playerPanel.Name = "playerPanel";
             this.playerPanel.Size = new System.Drawing.Size(531, 548);
             this.playerPanel.TabIndex = 3;
+            // 
+            // playerLabel
+            // 
+            this.playerLabel.AutoSize = true;
+            this.playerLabel.Font = new System.Drawing.Font("Borda 8", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerLabel.ForeColor = System.Drawing.Color.White;
+            this.playerLabel.Location = new System.Drawing.Point(456, 509);
+            this.playerLabel.Name = "playerLabel";
+            this.playerLabel.Size = new System.Drawing.Size(66, 21);
+            this.playerLabel.TabIndex = 1;
+            this.playerLabel.Text = "> Player";
+            this.playerLabel.Click += new System.EventHandler(this.playerLabel_Click);
             // 
             // traderPanel
             // 
@@ -96,55 +143,12 @@
             this.tradersLabel.AutoSize = true;
             this.tradersLabel.Font = new System.Drawing.Font("Borda 8", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tradersLabel.ForeColor = System.Drawing.Color.White;
-            this.tradersLabel.Location = new System.Drawing.Point(461, 509);
+            this.tradersLabel.Location = new System.Drawing.Point(450, 509);
             this.tradersLabel.Name = "tradersLabel";
-            this.tradersLabel.Size = new System.Drawing.Size(58, 21);
+            this.tradersLabel.Size = new System.Drawing.Size(72, 21);
             this.tradersLabel.TabIndex = 0;
-            this.tradersLabel.Text = "Traders";
-            // 
-            // playerLabel
-            // 
-            this.playerLabel.AutoSize = true;
-            this.playerLabel.Font = new System.Drawing.Font("Borda 8", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerLabel.ForeColor = System.Drawing.Color.White;
-            this.playerLabel.Location = new System.Drawing.Point(461, 509);
-            this.playerLabel.Name = "playerLabel";
-            this.playerLabel.Size = new System.Drawing.Size(52, 21);
-            this.playerLabel.TabIndex = 1;
-            this.playerLabel.Text = "Player";
-            // 
-            // botLabel
-            // 
-            this.botLabel.AutoSize = true;
-            this.botLabel.Font = new System.Drawing.Font("Borda 8", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botLabel.ForeColor = System.Drawing.Color.White;
-            this.botLabel.Location = new System.Drawing.Point(461, 509);
-            this.botLabel.Name = "botLabel";
-            this.botLabel.Size = new System.Drawing.Size(40, 21);
-            this.botLabel.TabIndex = 1;
-            this.botLabel.Text = "Bots";
-            // 
-            // raidLabel
-            // 
-            this.raidLabel.AutoSize = true;
-            this.raidLabel.Font = new System.Drawing.Font("Borda 8", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raidLabel.ForeColor = System.Drawing.Color.White;
-            this.raidLabel.Location = new System.Drawing.Point(461, 509);
-            this.raidLabel.Name = "raidLabel";
-            this.raidLabel.Size = new System.Drawing.Size(46, 21);
-            this.raidLabel.TabIndex = 1;
-            this.raidLabel.Text = "Inraid";
-            // 
-            // gameLabel
-            // 
-            this.gameLabel.AutoSize = true;
-            this.gameLabel.Font = new System.Drawing.Font("Borda 8", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameLabel.ForeColor = System.Drawing.Color.White;
-            this.gameLabel.Location = new System.Drawing.Point(461, 509);
-            this.gameLabel.Name = "gameLabel";
-            this.gameLabel.Size = new System.Drawing.Size(48, 21);
-            this.gameLabel.TabIndex = 1;
-            this.gameLabel.Text = "Game";
+            this.tradersLabel.Text = "> Traders";
+            this.tradersLabel.Click += new System.EventHandler(this.tradersLabel_Click);
             // 
             // shoalLabel
             // 

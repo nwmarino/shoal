@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="models\ConfigSchema.cs" />
+    <Compile Include="models\PanelButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Shoal.cs">
       <SubType>Form</SubType>
     </Compile>

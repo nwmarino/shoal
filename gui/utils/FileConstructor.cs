@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using shoalGui.models;
+using Gui.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace shoalGui.utils
+namespace Gui.utils
 {
     internal class FileConstructor
     {

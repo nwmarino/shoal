@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace shoalGui.models
+namespace Gui.models
 {
     internal class ConfigSchema
     {

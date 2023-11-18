@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace shoalGui.Properties
+namespace Gui.Properties
 {
 
 
