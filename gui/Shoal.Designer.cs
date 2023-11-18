@@ -39,11 +39,15 @@
             this.botLabel = new System.Windows.Forms.Label();
             this.raidLabel = new System.Windows.Forms.Label();
             this.gameLabel = new System.Windows.Forms.Label();
+            this.shoalLabel = new System.Windows.Forms.Label();
+            this.versionLabel = new System.Windows.Forms.Label();
+            this.shoalicon = new System.Windows.Forms.PictureBox();
             this.gamePanel.SuspendLayout();
             this.raidPanel.SuspendLayout();
             this.botPanel.SuspendLayout();
             this.playerPanel.SuspendLayout();
             this.traderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shoalicon)).BeginInit();
             this.SuspendLayout();
             // 
             // gamePanel
@@ -142,12 +146,48 @@
             this.gameLabel.TabIndex = 1;
             this.gameLabel.Text = "Game";
             // 
+            // shoalLabel
+            // 
+            this.shoalLabel.AutoSize = true;
+            this.shoalLabel.Font = new System.Drawing.Font("Borda 8", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shoalLabel.ForeColor = System.Drawing.Color.White;
+            this.shoalLabel.Location = new System.Drawing.Point(50, 24);
+            this.shoalLabel.Name = "shoalLabel";
+            this.shoalLabel.Size = new System.Drawing.Size(51, 24);
+            this.shoalLabel.TabIndex = 5;
+            this.shoalLabel.Text = "shoal";
+            // 
+            // versionLabel
+            // 
+            this.versionLabel.AutoSize = true;
+            this.versionLabel.Font = new System.Drawing.Font("Borda 8", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versionLabel.ForeColor = System.Drawing.Color.White;
+            this.versionLabel.Location = new System.Drawing.Point(477, 12);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(45, 19);
+            this.versionLabel.TabIndex = 6;
+            this.versionLabel.Text = "v2.0.0";
+            // 
+            // shoalicon
+            // 
+            this.shoalicon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.shoalicon.Image = ((System.Drawing.Image)(resources.GetObject("shoalicon.Image")));
+            this.shoalicon.Location = new System.Drawing.Point(12, 19);
+            this.shoalicon.Name = "shoalicon";
+            this.shoalicon.Size = new System.Drawing.Size(36, 36);
+            this.shoalicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.shoalicon.TabIndex = 7;
+            this.shoalicon.TabStop = false;
+            // 
             // shoalGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(531, 648);
+            this.Controls.Add(this.shoalicon);
+            this.Controls.Add(this.versionLabel);
+            this.Controls.Add(this.shoalLabel);
             this.Controls.Add(this.traderPanel);
             this.Controls.Add(this.playerPanel);
             this.Controls.Add(this.botPanel);
@@ -170,7 +210,9 @@
             this.playerPanel.PerformLayout();
             this.traderPanel.ResumeLayout(false);
             this.traderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shoalicon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -186,6 +228,9 @@
         private System.Windows.Forms.Label playerLabel;
         private System.Windows.Forms.Label raidLabel;
         private System.Windows.Forms.Label gameLabel;
+        private System.Windows.Forms.Label shoalLabel;
+        private System.Windows.Forms.Label versionLabel;
+        private System.Windows.Forms.PictureBox shoalicon;
     }
 }
 

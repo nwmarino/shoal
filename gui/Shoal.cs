@@ -15,6 +15,7 @@ namespace shoalGui
     public partial class shoalGui : Form
     {
         private Panel currentPanel;
+        private String modVersion;
 
         public shoalGui()
         {
