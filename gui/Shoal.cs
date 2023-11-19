@@ -16,12 +16,14 @@ namespace Gui
     public partial class shoalGui : Form
     {
         private Panel currentPanel;
-        private String modVersion;
 
         public shoalGui()
         {
             InitializeComponent();
+        }
 
+        private void shoalGui_Load(object sender, EventArgs e) 
+        {
             Panel[] availablePanels = { gamePanel,
                                         raidPanel,
                                         playerPanel,
@@ -30,26 +32,33 @@ namespace Gui
 
             foreach (Panel panel in availablePanels)
             {
-                panel.Dock = DockStyle.Fill;
                 panel.Hide();
             }
         }
-
-        private void shoalGui_Load(object sender, EventArgs e) { }
-
-        private void tradersLabel_Click(object sender, EventArgs e)
+        
+        private void gamePanelButton_Click(object sender, EventArgs e)
         {
-
+            currentPanel = PanelController.AppointForePanel(currentPanel, gamePanel);
         }
 
-        private void traderPanel_Paint(object sender, PaintEventArgs e)
+        private void raidPanelButton_Click(object sender, EventArgs e)
         {
-
+            currentPanel = PanelController.AppointForePanel(currentPanel, raidPanel);
         }
 
-        private void playerLabel_Click(object sender, EventArgs e)
+        private void playerPanelButton_Click(object sender, EventArgs e)
         {
+            currentPanel = PanelController.AppointForePanel(currentPanel, playerPanel);
+        }
 
+        private void botPanelButton_Click(object sender, EventArgs e)
+        {
+            currentPanel = PanelController.AppointForePanel(currentPanel, botPanel);
+        }
+
+        private void traderPanelButton_Click(object sender, EventArgs e)
+        {
+            currentPanel = PanelController.AppointForePanel(currentPanel, traderPanel);
         }
     }
 }

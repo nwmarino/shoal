@@ -11,6 +11,11 @@ namespace Gui
     {
         public static Panel AppointForePanel(Panel currentPanel, Panel targetPanel)
         {
+            if (currentPanel == targetPanel)
+            {
+                currentPanel.Hide();
+                return null;
+            }
             if (currentPanel == null)
             {
                 targetPanel.Show();

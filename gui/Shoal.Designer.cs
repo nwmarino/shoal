@@ -44,11 +44,11 @@ namespace Gui
             this.shoalLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.shoalicon = new System.Windows.Forms.PictureBox();
-            this.gamePanelButton = new Gui.models.LeftPanelButton();
-            this.raidPanelButton = new Gui.models.MidPanelButton();
-            this.playerPanelButton = new Gui.models.MidPanelButton();
-            this.botPanelButton = new Gui.models.MidPanelButton();
             this.traderPanelButton = new Gui.models.RightPanelButton();
+            this.botPanelButton = new Gui.models.MidPanelButton();
+            this.playerPanelButton = new Gui.models.MidPanelButton();
+            this.raidPanelButton = new Gui.models.MidPanelButton();
+            this.gamePanelButton = new Gui.models.LeftPanelButton();
             this.gamePanel.SuspendLayout();
             this.raidPanel.SuspendLayout();
             this.botPanel.SuspendLayout();
@@ -73,7 +73,7 @@ namespace Gui
             this.gameLabel.Location = new System.Drawing.Point(460, 509);
             this.gameLabel.Name = "gameLabel";
             this.gameLabel.Size = new System.Drawing.Size(62, 21);
-            this.gameLabel.TabIndex = 1;
+            this.gameLabel.TabIndex = 0;
             this.gameLabel.Text = "> Game";
             // 
             // raidPanel
@@ -132,7 +132,6 @@ namespace Gui
             this.playerLabel.Size = new System.Drawing.Size(66, 21);
             this.playerLabel.TabIndex = 1;
             this.playerLabel.Text = "> Player";
-            this.playerLabel.Click += new System.EventHandler(this.playerLabel_Click);
             // 
             // traderPanel
             // 
@@ -141,7 +140,6 @@ namespace Gui
             this.traderPanel.Name = "traderPanel";
             this.traderPanel.Size = new System.Drawing.Size(531, 548);
             this.traderPanel.TabIndex = 4;
-            this.traderPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.traderPanel_Paint);
             // 
             // tradersLabel
             // 
@@ -153,7 +151,6 @@ namespace Gui
             this.tradersLabel.Size = new System.Drawing.Size(72, 21);
             this.tradersLabel.TabIndex = 0;
             this.tradersLabel.Text = "> Traders";
-            this.tradersLabel.Click += new System.EventHandler(this.tradersLabel_Click);
             // 
             // shoalLabel
             // 
@@ -188,77 +185,31 @@ namespace Gui
             this.shoalicon.TabIndex = 7;
             this.shoalicon.TabStop = false;
             // 
-            // gamePanelButton
+            // traderPanelButton
             // 
-            this.gamePanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.gamePanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.gamePanelButton.clicked = false;
-            this.gamePanelButton.FlatAppearance.BorderSize = 0;
-            this.gamePanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.gamePanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.gamePanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.gamePanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gamePanelButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gamePanelButton.hovering = false;
-            this.gamePanelButton.Location = new System.Drawing.Point(12, 61);
-            this.gamePanelButton.Name = "gamePanelButton";
-            this.gamePanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.gamePanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.gamePanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.gamePanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.gamePanelButton.Size = new System.Drawing.Size(100, 35);
-            this.gamePanelButton.TabIndex = 8;
-            this.gamePanelButton.Text = "game";
-            this.gamePanelButton.textColor = System.Drawing.Color.White;
-            this.gamePanelButton.UseVisualStyleBackColor = true;
-            // 
-            // raidPanelButton
-            // 
-            this.raidPanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.raidPanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.raidPanelButton.clicked = false;
-            this.raidPanelButton.FlatAppearance.BorderSize = 0;
-            this.raidPanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.raidPanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.raidPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.raidPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.raidPanelButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raidPanelButton.hovering = false;
-            this.raidPanelButton.Location = new System.Drawing.Point(95, 61);
-            this.raidPanelButton.Name = "raidPanelButton";
-            this.raidPanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.raidPanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.raidPanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.raidPanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.raidPanelButton.Size = new System.Drawing.Size(100, 35);
-            this.raidPanelButton.TabIndex = 9;
-            this.raidPanelButton.Text = "raid";
-            this.raidPanelButton.textColor = System.Drawing.Color.White;
-            this.raidPanelButton.UseVisualStyleBackColor = true;
-            // 
-            // playerPanelButton
-            // 
-            this.playerPanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.playerPanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.playerPanelButton.clicked = false;
-            this.playerPanelButton.FlatAppearance.BorderSize = 0;
-            this.playerPanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.playerPanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.playerPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.playerPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.playerPanelButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerPanelButton.hovering = false;
-            this.playerPanelButton.Location = new System.Drawing.Point(178, 61);
-            this.playerPanelButton.Name = "playerPanelButton";
-            this.playerPanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.playerPanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.playerPanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.playerPanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.playerPanelButton.Size = new System.Drawing.Size(100, 35);
-            this.playerPanelButton.TabIndex = 10;
-            this.playerPanelButton.Text = "player";
-            this.playerPanelButton.textColor = System.Drawing.Color.White;
-            this.playerPanelButton.UseVisualStyleBackColor = true;
+            this.traderPanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.traderPanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.traderPanelButton.clicked = false;
+            this.traderPanelButton.FlatAppearance.BorderSize = 0;
+            this.traderPanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.traderPanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.traderPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.traderPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.traderPanelButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.traderPanelButton.hovering = false;
+            this.traderPanelButton.Location = new System.Drawing.Point(344, 61);
+            this.traderPanelButton.Name = "traderPanelButton";
+            this.traderPanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.traderPanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.traderPanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.traderPanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.traderPanelButton.Size = new System.Drawing.Size(100, 35);
+            this.traderPanelButton.TabIndex = 12;
+            this.traderPanelButton.Text = "trader";
+            this.traderPanelButton.textColor = System.Drawing.Color.White;
+            this.traderPanelButton.toggled = false;
+            this.traderPanelButton.UseVisualStyleBackColor = true;
+            this.traderPanelButton.Click += new System.EventHandler(this.traderPanelButton_Click);
             // 
             // botPanelButton
             // 
@@ -282,31 +233,87 @@ namespace Gui
             this.botPanelButton.TabIndex = 11;
             this.botPanelButton.Text = "bot";
             this.botPanelButton.textColor = System.Drawing.Color.White;
+            this.botPanelButton.toggled = false;
             this.botPanelButton.UseVisualStyleBackColor = true;
+            this.botPanelButton.Click += new System.EventHandler(this.botPanelButton_Click);
             // 
-            // traderPanelButton
+            // playerPanelButton
             // 
-            this.traderPanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.traderPanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.traderPanelButton.clicked = false;
-            this.traderPanelButton.FlatAppearance.BorderSize = 0;
-            this.traderPanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.traderPanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.traderPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.traderPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.traderPanelButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.traderPanelButton.hovering = false;
-            this.traderPanelButton.Location = new System.Drawing.Point(344, 61);
-            this.traderPanelButton.Name = "traderPanelButton";
-            this.traderPanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.traderPanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.traderPanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.traderPanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.traderPanelButton.Size = new System.Drawing.Size(100, 35);
-            this.traderPanelButton.TabIndex = 12;
-            this.traderPanelButton.Text = "trader";
-            this.traderPanelButton.textColor = System.Drawing.Color.White;
-            this.traderPanelButton.UseVisualStyleBackColor = true;
+            this.playerPanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.playerPanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.playerPanelButton.clicked = false;
+            this.playerPanelButton.FlatAppearance.BorderSize = 0;
+            this.playerPanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.playerPanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.playerPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.playerPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerPanelButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerPanelButton.hovering = false;
+            this.playerPanelButton.Location = new System.Drawing.Point(178, 61);
+            this.playerPanelButton.Name = "playerPanelButton";
+            this.playerPanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.playerPanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.playerPanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.playerPanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.playerPanelButton.Size = new System.Drawing.Size(100, 35);
+            this.playerPanelButton.TabIndex = 10;
+            this.playerPanelButton.Text = "player";
+            this.playerPanelButton.textColor = System.Drawing.Color.White;
+            this.playerPanelButton.toggled = false;
+            this.playerPanelButton.UseVisualStyleBackColor = true;
+            this.playerPanelButton.Click += new System.EventHandler(this.playerPanelButton_Click);
+            // 
+            // raidPanelButton
+            // 
+            this.raidPanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.raidPanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.raidPanelButton.clicked = false;
+            this.raidPanelButton.FlatAppearance.BorderSize = 0;
+            this.raidPanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.raidPanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.raidPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.raidPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.raidPanelButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raidPanelButton.hovering = false;
+            this.raidPanelButton.Location = new System.Drawing.Point(95, 61);
+            this.raidPanelButton.Name = "raidPanelButton";
+            this.raidPanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.raidPanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.raidPanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.raidPanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.raidPanelButton.Size = new System.Drawing.Size(100, 35);
+            this.raidPanelButton.TabIndex = 9;
+            this.raidPanelButton.Text = "raid";
+            this.raidPanelButton.textColor = System.Drawing.Color.White;
+            this.raidPanelButton.toggled = false;
+            this.raidPanelButton.UseVisualStyleBackColor = true;
+            this.raidPanelButton.Click += new System.EventHandler(this.raidPanelButton_Click);
+            // 
+            // gamePanelButton
+            // 
+            this.gamePanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.gamePanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.gamePanelButton.clicked = false;
+            this.gamePanelButton.FlatAppearance.BorderSize = 0;
+            this.gamePanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.gamePanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.gamePanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.gamePanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gamePanelButton.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gamePanelButton.hovering = false;
+            this.gamePanelButton.Location = new System.Drawing.Point(12, 61);
+            this.gamePanelButton.Name = "gamePanelButton";
+            this.gamePanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.gamePanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.gamePanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.gamePanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.gamePanelButton.Size = new System.Drawing.Size(100, 35);
+            this.gamePanelButton.TabIndex = 8;
+            this.gamePanelButton.Text = "game";
+            this.gamePanelButton.textColor = System.Drawing.Color.White;
+            this.gamePanelButton.toggled = false;
+            this.gamePanelButton.UseVisualStyleBackColor = true;
+            this.gamePanelButton.Click += new System.EventHandler(this.gamePanelButton_Click);
             // 
             // shoalGui
             // 
@@ -315,6 +322,7 @@ namespace Gui
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(531, 648);
             this.Controls.Add(this.traderPanelButton);
+            this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.botPanelButton);
             this.Controls.Add(this.playerPanelButton);
             this.Controls.Add(this.raidPanelButton);
@@ -326,7 +334,6 @@ namespace Gui
             this.Controls.Add(this.playerPanel);
             this.Controls.Add(this.botPanel);
             this.Controls.Add(this.raidPanel);
-            this.Controls.Add(this.gamePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -16,6 +16,7 @@ namespace Gui.models
         private Color _textColor;
         private bool _hovering;
         private bool _clicked;
+        private bool _toggled;
 
         public Color onHoverButtonColor
         {
@@ -107,6 +108,16 @@ namespace Gui.models
             }
         }
 
+        public bool toggled
+        {
+            get { return _toggled; }
+            set
+            {
+                _toggled = value;
+                Invalidate();
+            }
+        }
+
         public LeftPanelButton()
         {
             DoubleBuffered = true;
@@ -137,6 +148,20 @@ namespace Gui.models
                 clicked = false;
                 Invalidate();
             };
+            MouseClick += (sender, e) =>
+            {
+                if (!toggled)
+                {
+                    toggled = true;
+                    textColor = Color.FromArgb(20, 20, 20);
+                }
+                else
+                {
+                    toggled = false;
+                    textColor = Color.White;
+                }
+                Invalidate();
+            };
         }
 
         protected private void SetGlobalParams()
@@ -164,15 +189,20 @@ namespace Gui.models
                               new Point(x: 100, y: 0),
                               new Point(x: 80, y: 35),
                               new Point(x: 0, y: 35)};
-            if (_hovering)
+            if (hovering)
             {
                 currentButtonColor = onHoverButtonColor;
                 currentBorderColor = onHoverBorderColor;
             }
-            if (_clicked)
+            if (clicked)
             {
                 currentButtonColor = onClickButtonColor;
                 currentBorderColor = onClickBorderColor;
+            }
+            if (toggled)
+            {
+                currentBorderColor = Color.FromArgb(225, 225, 225);
+                currentButtonColor = Color.FromArgb(225, 225, 225);
             }
             GraphicsPath path = new GraphicsPath();
             Graphics g = e.Graphics;
