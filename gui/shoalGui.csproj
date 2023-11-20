@@ -60,6 +60,9 @@
     <Compile Include="models\RightPanelButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="models\SaveButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Shoal.cs">
       <SubType>Form</SubType>
     </Compile>

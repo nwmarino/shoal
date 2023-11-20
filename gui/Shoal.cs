@@ -60,5 +60,10 @@ namespace Gui
             currentPanel = PanelController.AppointForePanel(currentPanel, traderPanel);
             buttonMod.PushButtonPresence(traderPanelButton);
         }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -48,7 +48,8 @@ namespace Gui
             this.playerPanelButton = new Gui.models.PanelButton();
             this.raidPanelButton = new Gui.models.PanelButton();
             this.gamePanelButton = new Gui.models.LeftPanelButton();
-            this.traderPanelButton = new Gui.models.RightPanelButton();
+            this.traderPanelButton = new Gui.models.PanelButton();
+            this.saveButton = new Gui.models.SaveButton();
             this.gamePanel.SuspendLayout();
             this.raidPanel.SuspendLayout();
             this.botPanel.SuspendLayout();
@@ -315,12 +316,39 @@ namespace Gui
             this.traderPanelButton.UseVisualStyleBackColor = true;
             this.traderPanelButton.Click += new System.EventHandler(this.traderPanelButton_Click);
             // 
+            // saveButton
+            // 
+            this.saveButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.saveButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.saveButton.clicked = false;
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.saveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.saveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Font = new System.Drawing.Font("Borda 10", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.hovering = false;
+            this.saveButton.Location = new System.Drawing.Point(427, 59);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.saveButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.saveButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.saveButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.saveButton.Size = new System.Drawing.Size(100, 35);
+            this.saveButton.TabIndex = 13;
+            this.saveButton.Text = "save";
+            this.saveButton.textColor = System.Drawing.Color.White;
+            this.saveButton.toggled = false;
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // shoalGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(531, 648);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.traderPanelButton);
             this.Controls.Add(this.botPanelButton);
             this.Controls.Add(this.playerPanelButton);
@@ -376,7 +404,8 @@ namespace Gui
         private PanelButton raidPanelButton;
         private PanelButton playerPanelButton;
         private PanelButton botPanelButton;
-        private RightPanelButton traderPanelButton;
+        private PanelButton traderPanelButton;
+        private SaveButton saveButton;
     }
 }
 
