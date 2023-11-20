@@ -21,10 +21,8 @@ namespace Gui
                                       playerPanelButton, botPanelButton,
                                       traderPanelButton};
             buttonMod = new ButtonController(buttons);
-            Panel[] availablePanels = { gamePanel,
-                                        raidPanel,
-                                        playerPanel,
-                                        botPanel,
+            Panel[] availablePanels = { gamePanel, raidPanel,
+                                        playerPanel, botPanel,
                                         traderPanel };
 
             foreach (Panel panel in availablePanels)

@@ -120,6 +120,8 @@ namespace Gui.models
             set
             {
                 _toggled = value;
+                if (value) textColor = Color.FromArgb(20, 20, 20);
+                else textColor = Color.White;
                 Invalidate();
             }
         }
@@ -155,12 +157,10 @@ namespace Gui.models
                 if (!toggled)
                 {
                     toggled = true;
-                    textColor = Color.FromArgb(20, 20, 20);
                 }
                 else
                 {
                     toggled = false;
-                    textColor = Color.White;
                 }
                 Invalidate();
             };
