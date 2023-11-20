@@ -53,7 +53,7 @@
     <Compile Include="models\LeftPanelButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="models\MidPanelButton.cs">
+    <Compile Include="models\PanelButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="models\RightPanelButton.cs">

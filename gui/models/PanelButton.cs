@@ -5,8 +5,14 @@ using System.Drawing.Drawing2D;
 
 namespace Gui.models
 {
-    internal class MidPanelButton : Button
+    internal class PanelButton : Button
     {
+        private Point[] polygon = {new Point(x: 0, y: 35),
+                                   new Point(x: 20, y: 0),
+                                   new Point(x: 100, y: 0),
+                                   new Point(x: 80, y: 35),
+                                   new Point(x: 0, y: 35)};
+        private Color theme;
         private Color _onHoverButtonColor;
         private Color _onHoverBorderColor;
         private Color _onClickButtonColor;
@@ -118,15 +124,11 @@ namespace Gui.models
             }
         }
 
-        public MidPanelButton()
+        public PanelButton()
         {
-            DoubleBuffered = true;
-            Color theme = Color.FromArgb(90, 90, 90);
-            buttonColor = theme;
-            borderColor = theme;
+            SetGlobalParams();
             hovering = false;
             clicked = false;
-            SetGlobalParams();
             MouseEnter += (sender, e) =>
             {
                 hovering = true;
@@ -166,6 +168,9 @@ namespace Gui.models
 
         protected private void SetGlobalParams()
         {
+            theme = Color.FromArgb(90, 90, 90);
+            buttonColor = theme;
+            borderColor = theme;
             FlatAppearance.MouseDownBackColor = Color.Transparent;
             FlatAppearance.MouseOverBackColor = Color.Transparent;
             FlatAppearance.CheckedBackColor = Color.Transparent;
@@ -184,11 +189,6 @@ namespace Gui.models
             base.OnPaint(e);
             Color currentButtonColor = buttonColor;
             Color currentBorderColor = borderColor;
-            Point[] vertices = {new Point(x: 0, y: 35),
-                              new Point(x: 20, y: 0),
-                              new Point(x: 100, y: 0),
-                              new Point(x: 80, y: 35),
-                              new Point(x: 0, y: 35)};
             if (hovering)
             {
                 currentButtonColor = onHoverButtonColor;
@@ -206,7 +206,7 @@ namespace Gui.models
             }
             GraphicsPath path = new GraphicsPath();
             Graphics g = e.Graphics;
-            path.AddPolygon(vertices);
+            path.AddPolygon(polygon);
             Pen pen = new Pen(currentBorderColor, 1);
             SolidBrush brush = new SolidBrush(currentButtonColor);
             e.Graphics.DrawPath(pen, path);
