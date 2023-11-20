@@ -7,11 +7,11 @@ namespace Gui.models
 {
     internal class PanelButton : Button
     {
-        private Point[] polygon = {new Point(x: 0, y: 35),
-                                   new Point(x: 20, y: 0),
-                                   new Point(x: 100, y: 0),
-                                   new Point(x: 80, y: 35),
-                                   new Point(x: 0, y: 35)};
+        protected Point[] polygon = {new Point(x: 0, y: 35),
+                                    new Point(x: 20, y: 0),
+                                    new Point(x: 100, y: 0),
+                                    new Point(x: 80, y: 35),
+                                    new Point(x: 0, y: 35)};
         private Color theme;
         private Color _onHoverButtonColor;
         private Color _onHoverBorderColor;
