@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controllers\ButtonController.cs" />
     <Compile Include="models\ConfigSchema.cs" />
     <Compile Include="models\LeftPanelButton.cs">
       <SubType>Component</SubType>
