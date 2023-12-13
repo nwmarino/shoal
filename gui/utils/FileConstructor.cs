@@ -13,7 +13,7 @@ namespace Gui.utils
         internal static void writeToFile(ConfigSchema data)
         {
             string json = JsonConvert.SerializeObject(data, Formatting.Indented);
-            System.IO.File.WriteAllText("../../output/data.json", json);
+            System.IO.File.WriteAllText("../data.json", json);
         }
     }
 }

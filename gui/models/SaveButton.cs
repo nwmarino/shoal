@@ -17,12 +17,8 @@ namespace Gui.models
             MouseClick += (sender, e) =>
             {
                 toggled = false;
-                //FileConstructor.writeToFile();
                 Invalidate();
             };
-
-        }
-
-        
+        }  
     }
 }

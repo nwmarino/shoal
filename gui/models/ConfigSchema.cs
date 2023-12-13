@@ -1,52 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gui.models
+﻿namespace Gui.models
 {
     internal class ConfigSchema
     {
-        string[] CustomsReshalaBoss;
+        string[] CustomsReshalaBoss { set; get; }
         string[] CustomsGoonsquadBoss;
         string[] CustomsCultistBoss;
-        string[] WoodsShturmanBoss;
-        string[] WoodsGoonsquadBoss;
-        string[] WoodsCultistBoss;
-        string[] InterchangeKillaBoss;
         string[] DayFactoryTagillaBoss;
         string[] NightFactoryTagillaBoss;
         string[] NightFactoryCultistBoss;
+        string[] InterchangeKillaBoss;
         string[] LighthouseZryachiyBoss;
         string[] LighthouseGoonsquadBoss;
+        string[] ReserveGlukharBoss;
         string[] ShorelineSanitarBoss;
         string[] ShorelineGoonsquadBoss;
         string[] ShorelineCultistBoss;
         string[] StreetsKabanBoss;
         string[] StreetsKillaBoss;
-        string[] ReserveGlukharBoss;
-        int[] ScavengerToPmc;
+        string[] WoodsShturmanBoss;
+        string[] WoodsGoonsquadBoss;
+        string[] WoodsCultistBoss;
         int[] RaiderToPmc;
         int[] RogueToPmc;
-        int TimeBeforeDeploying;
-        int ScavengerModeCooldown;
+        int[] ScavengerToPmc;
+        int FleaMarketAccessLevel;
         int HeadHitpoints;
         int ChestHitpoints;
-        int StomachHitpoints;
         int LeftArmHitpoints;
-        int RightArmHitpoints;
         int LeftLegHitpoints;
+        int RightArmHitpoints;
         int RightLegHitpoints;
-        int UsecToBearRatio;
         int PmcFriendlyChance;
         int PmcBackpackMaxValue;
         int PmcPocketMaxValue;
         int PmcVestMaxValue;
-        float HideoutConstructionTimeMultiplier;
-        float HideoutProductionTimeMultiplier;
-        float ExtractExperienceMultiplier;
-        float KilledExperienceMultiplier;
+        int ScavengerModeCooldown;
+        int StomachHitpoints;
+        int TimeToDeploy;
+        int UsecToBearRatio;
         float CustomsAirdropChance;
         float WoodsAirdropChance;
         float LighthouseAirdropChance;
@@ -54,37 +45,29 @@ namespace Gui.models
         float StreetsAirdropChance;
         float ReserveAirdropChance;
         float InterchangeAirdropChance;
-        float ScavengerHealthMultiplier;
-        float SpecialBotHealthMultiplier;
         float BossHealthMultiplier;
         float BossFollowerHealthMultiplier;
-        bool DisableSkillFatigue;
-        bool ConvertCooperationExits;
+        float ExtractExperienceMultiplier;
+        float KilledExperienceMultiplier;
+        float HideoutConstructionTimeMultiplier;
+        float HideoutProductionTimeMultiplier;
+        float ScavengerHealthMultiplier;
+        float SpecialBotHealthMultiplier;
+        bool AccessLabsWithoutCard;
         bool AllowExitFromAnySide;
+        bool ConvertCooperationExits;
+        bool DisableCustomBotWaves;
+        bool DisableFleaMarket;
+        bool DisableFallDamage;
+        bool DisableScavengerMode;
+        bool DisableSkillFatigue;
+        bool DisableRunthroughs;
+        bool ExtendRaidTimerToHour;
+        bool ExtendKeyUsageLimit;
         bool ForceAllExitsAvailable;
-        bool PatchScavengerExits;
         bool InstantHideoutConstruction;
         bool InstantShowoutProduction;
-        bool DisableCustomBotWaves;
-
-        int FenceItemCount;
-        int FleaMarketAccessLevel;
-        int VerticalCustomPocketSize;
-        int HorizontalCustomPocketSize;
-        float ItemWeightMultiplier;
-        float RepairPriceMultiplier;
-        bool RemoveKeyUseLimit;
-        bool FreeClothing;
-        bool AllowClothesFromAnySide;
+        bool PatchScavengerExits;
         bool RemoveFoundInRaidQuestConditions;
-        bool DisableTraderInsurance;
-        bool DisableFallDamage;
-        bool DisableEnergyHydrationDrain;
-        bool DisableRunThroughs;
-        bool AccessLabsWithoutCard;
-        bool ExtendRaidTimerToHour;
-        bool DisableFleaMarket;
-        bool EnableCustomPocketSize;
-        
     }
 }

@@ -9,6 +9,7 @@ export default class sBase
     {
         const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
         const globals = tables.globals.config;
+        const quests = tables.templates.quests;
         const bodyPartHealth = globals.Health.ProfileHealthSettings.BodyPartsSettings;
 
         globals.TimeBeforeDeploy = baseConfig["TIME_TO_DEPLOY"];
@@ -33,6 +34,31 @@ export default class sBase
             globals.SkillMinEffectiveness = 1.0;
             globals.SkillFreshEffectiveness = 1.0;
         }
-        
+
+        if (gameConfig["DISABLE_FALL_DMG"])
+            globals.Health.Falling.DamagePerMeter = 0;
+
+        if (gameConfig["FREE_LAB_ACCESS"])
+            tables.locations.laboratory.base.AccessKeys = [];
+
+        if (gameConfig["DISABLE_SCAV_MODE"])
+            for (const map in tables.locations)
+                tables.locations[map].base.DisabledForScav = true;
+
+        if (gameConfig["EXTEND_RAID_TIMER"])
+            for (const map in tables.locations)
+                tables.locations[map].base.EscapeTimeLimit = 60;
+
+        if (gameConfig["DISABLE_RUNTHRUS"])
+        {
+            globals.exp.match_end.survived_exp_requirement = 0;
+            globals.exp.match_end.survived_seconds_requirement = 0;
+        }
+
+        if (gameConfig["REMOVE_FIR_CONDITION"])
+            for (const quest in quests)
+                for (const condition in quest["conditions"]["AvailableForFinish"])
+                    if (condition["_parent"] == "HandoverItem" && !condition["_props"].onlyFoundInRaid)
+                        condition["_props"].onlyFoundInRaid = false;
     }
 }

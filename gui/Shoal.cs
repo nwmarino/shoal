@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Gui.controllers;
 using Gui.models;
+using Gui.utils;
 
 namespace Gui
 {
@@ -9,6 +10,7 @@ namespace Gui
     {
         private Panel currentPanel = null;
         private ButtonController buttonMod;
+        private ConfigSchema changes;
 
         public shoalGui()
         {
@@ -17,18 +19,16 @@ namespace Gui
 
         private void shoalGui_Load(object sender, EventArgs e) 
         {
-            PanelButton[] buttons = { gamePanelButton, raidPanelButton,
-                                      playerPanelButton, botPanelButton,
-                                      traderPanelButton};
-            buttonMod = new ButtonController(buttons);
             Panel[] availablePanels = { gamePanel, raidPanel,
                                         playerPanel, botPanel,
                                         traderPanel };
-
-            foreach (Panel panel in availablePanels)
-            {
-                panel.Hide();
-            }
+            PanelButton[] buttons = { gamePanelButton, raidPanelButton,
+                                      playerPanelButton, botPanelButton,
+                                      traderPanelButton};
+            foreach (Panel panel in availablePanels) panel.Hide();
+            buttonMod = new ButtonController(buttons);
+            changes = new ConfigSchema();
+            
         }
 
         private void gamePanelButton_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace Gui
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-
+            FileConstructor.writeToFile(changes);
         }
     }
 }
