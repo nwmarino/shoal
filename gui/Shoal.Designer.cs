@@ -44,12 +44,13 @@ namespace Gui
             this.shoalLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.shoalicon = new System.Windows.Forms.PictureBox();
+            this.labCardToggle = new System.Windows.Forms.CheckBox();
+            this.saveButton = new Gui.models.SaveButton();
+            this.traderPanelButton = new Gui.models.PanelButton();
             this.botPanelButton = new Gui.models.PanelButton();
             this.playerPanelButton = new Gui.models.PanelButton();
             this.raidPanelButton = new Gui.models.PanelButton();
             this.gamePanelButton = new Gui.models.LeftPanelButton();
-            this.traderPanelButton = new Gui.models.PanelButton();
-            this.saveButton = new Gui.models.SaveButton();
             this.gamePanel.SuspendLayout();
             this.raidPanel.SuspendLayout();
             this.botPanel.SuspendLayout();
@@ -60,6 +61,7 @@ namespace Gui
             // 
             // gamePanel
             // 
+            this.gamePanel.Controls.Add(this.labCardToggle);
             this.gamePanel.Controls.Add(this.gameLabel);
             this.gamePanel.Location = new System.Drawing.Point(0, 100);
             this.gamePanel.Name = "gamePanel";
@@ -186,6 +188,70 @@ namespace Gui
             this.shoalicon.TabIndex = 7;
             this.shoalicon.TabStop = false;
             // 
+            // labCardToggle
+            // 
+            this.labCardToggle.AutoSize = true;
+            this.labCardToggle.ForeColor = System.Drawing.Color.White;
+            this.labCardToggle.Location = new System.Drawing.Point(12, 16);
+            this.labCardToggle.Name = "labCardToggle";
+            this.labCardToggle.Size = new System.Drawing.Size(98, 17);
+            this.labCardToggle.TabIndex = 1;
+            this.labCardToggle.Text = "free lab access";
+            this.labCardToggle.UseVisualStyleBackColor = true;
+            this.labCardToggle.CheckedChanged += new System.EventHandler(this.labCardToggle_CheckedChanged);
+            // 
+            // saveButton
+            // 
+            this.saveButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.saveButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.saveButton.clicked = false;
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.saveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.saveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Font = new System.Drawing.Font("Borda 10", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.hovering = false;
+            this.saveButton.Location = new System.Drawing.Point(427, 59);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.saveButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.saveButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.saveButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.saveButton.Size = new System.Drawing.Size(100, 35);
+            this.saveButton.TabIndex = 13;
+            this.saveButton.Text = "save";
+            this.saveButton.textColor = System.Drawing.Color.White;
+            this.saveButton.toggled = false;
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // traderPanelButton
+            // 
+            this.traderPanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.traderPanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.traderPanelButton.clicked = false;
+            this.traderPanelButton.FlatAppearance.BorderSize = 0;
+            this.traderPanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.traderPanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.traderPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.traderPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.traderPanelButton.Font = new System.Drawing.Font("Borda 10", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.traderPanelButton.hovering = false;
+            this.traderPanelButton.Location = new System.Drawing.Point(344, 59);
+            this.traderPanelButton.Name = "traderPanelButton";
+            this.traderPanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.traderPanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.traderPanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.traderPanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
+            this.traderPanelButton.Size = new System.Drawing.Size(100, 35);
+            this.traderPanelButton.TabIndex = 12;
+            this.traderPanelButton.Text = "trader";
+            this.traderPanelButton.textColor = System.Drawing.Color.White;
+            this.traderPanelButton.toggled = false;
+            this.traderPanelButton.UseVisualStyleBackColor = true;
+            this.traderPanelButton.Click += new System.EventHandler(this.traderPanelButton_Click);
+            // 
             // botPanelButton
             // 
             this.botPanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
@@ -290,58 +356,6 @@ namespace Gui
             this.gamePanelButton.UseVisualStyleBackColor = true;
             this.gamePanelButton.Click += new System.EventHandler(this.gamePanelButton_Click);
             // 
-            // traderPanelButton
-            // 
-            this.traderPanelButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.traderPanelButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.traderPanelButton.clicked = false;
-            this.traderPanelButton.FlatAppearance.BorderSize = 0;
-            this.traderPanelButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.traderPanelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.traderPanelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.traderPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.traderPanelButton.Font = new System.Drawing.Font("Borda 10", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.traderPanelButton.hovering = false;
-            this.traderPanelButton.Location = new System.Drawing.Point(344, 59);
-            this.traderPanelButton.Name = "traderPanelButton";
-            this.traderPanelButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.traderPanelButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.traderPanelButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.traderPanelButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.traderPanelButton.Size = new System.Drawing.Size(100, 35);
-            this.traderPanelButton.TabIndex = 12;
-            this.traderPanelButton.Text = "trader";
-            this.traderPanelButton.textColor = System.Drawing.Color.White;
-            this.traderPanelButton.toggled = false;
-            this.traderPanelButton.UseVisualStyleBackColor = true;
-            this.traderPanelButton.Click += new System.EventHandler(this.traderPanelButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.saveButton.buttonColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.saveButton.clicked = false;
-            this.saveButton.FlatAppearance.BorderSize = 0;
-            this.saveButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.saveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.saveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Font = new System.Drawing.Font("Borda 10", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.hovering = false;
-            this.saveButton.Location = new System.Drawing.Point(427, 59);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.onClickBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.saveButton.onClickButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.saveButton.onHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.saveButton.onHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(110)))));
-            this.saveButton.Size = new System.Drawing.Size(100, 35);
-            this.saveButton.TabIndex = 13;
-            this.saveButton.Text = "save";
-            this.saveButton.textColor = System.Drawing.Color.White;
-            this.saveButton.toggled = false;
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
             // shoalGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +420,7 @@ namespace Gui
         private PanelButton botPanelButton;
         private PanelButton traderPanelButton;
         private SaveButton saveButton;
+        private System.Windows.Forms.CheckBox labCardToggle;
     }
 }
 

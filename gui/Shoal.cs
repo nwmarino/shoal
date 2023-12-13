@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Gui.controllers;
 using Gui.models;
-using Gui.utils;
+using Newtonsoft.Json;
 
 namespace Gui
 {
@@ -10,7 +10,7 @@ namespace Gui
     {
         private Panel currentPanel = null;
         private ButtonController buttonMod;
-        private ConfigSchema changes;
+        private ConfigSchema schema;
 
         public shoalGui()
         {
@@ -27,8 +27,7 @@ namespace Gui
                                       traderPanelButton};
             foreach (Panel panel in availablePanels) panel.Hide();
             buttonMod = new ButtonController(buttons);
-            changes = new ConfigSchema();
-            changes.HeadHitpoints = 100;
+            schema = new ConfigSchema();
         }
 
         private void gamePanelButton_Click(object sender, EventArgs e)
@@ -63,7 +62,21 @@ namespace Gui
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            FileConstructor.writeToFile(changes);
+            string json = JsonConvert.SerializeObject(schema, Formatting.Indented);
+            System.IO.File.WriteAllText(@"data.json", json);
+        }
+
+        private void labCardToggle_CheckedChanged(object sender, EventArgs e)
+        {
+            switch (labCardToggle.Checked)
+            {
+                case true:
+                    schema.AccessLabsWithoutCard = true;
+                    break;
+                case false:
+                    schema.AccessLabsWithoutCard = false;
+                    break;
+            }
         }
     }
 }
