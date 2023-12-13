@@ -28,7 +28,7 @@ namespace Gui
             foreach (Panel panel in availablePanels) panel.Hide();
             buttonMod = new ButtonController(buttons);
             changes = new ConfigSchema();
-            
+            changes.HeadHitpoints = 100;
         }
 
         private void gamePanelButton_Click(object sender, EventArgs e)
