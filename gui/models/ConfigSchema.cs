@@ -5,6 +5,7 @@ namespace Gui.models
 {
     internal class ConfigSchema
     {
+        // following are of npc section
         public List<string> CustomsReshalaBoss;
         public List<string> CustomsGoonsquadBoss;
         public List<string> CustomsCultistBoss;
@@ -12,7 +13,6 @@ namespace Gui.models
         public List<string> NightFactoryTagillaBoss;
         public List<string> NightFactoryCultistBoss;
         public List<string> InterchangeKillaBoss;
-        public List<string> LighthouseZryachiyBoss;
         public List<string> LighthouseGoonsquadBoss;
         public List<string> ReserveGlukharBoss;
         public List<string> ShorelineSanitarBoss;
@@ -23,77 +23,77 @@ namespace Gui.models
         public List<string> WoodsShturmanBoss;
         public List<string> WoodsGoonsquadBoss;
         public List<string> WoodsCultistBoss;
-        public List<int> RaiderToPmc;
-        public List<int> RogueToPmc;
-        public List<int> ScavengerToPmc;
-        public int FleaMarketAccessLevel;
-        public int HeadHitpoints;
-        public int ChestHitpoints;
-        public int StomachHitpoints;
-        public int LeftArmHitpoints;
-        public int LeftLegHitpoints;
-        public int RightArmHitpoints;
-        public int RightLegHitpoints;
-        public int PmcFriendlyChance;
-        public int PmcBackpackMaxValue;
-        public int PmcVestMaxValue;
-        public int ScavengerModeCooldown;
-        public int TimeToDeploy;
-        public int UsecToBearRatio;
-        public double CustomsAirdropChance;
-        public double WoodsAirdropChance;
-        public double LighthouseAirdropChance;
-        public double ShorelineAirdropChance;
-        public double StreetsAirdropChance;
-        public double ReserveAirdropChance;
-        public double InterchangeAirdropChance;
-        public double BossHealthMultiplier;
-        public double BossFollowerHealthMultiplier;
-        public double ScavengerHealthMultiplier;
-        public double SpecialBotHealthMultiplier;
-        public double ExtractExperienceMultiplier;
-        public double KilledExperienceMultiplier;
-        public double HideoutConstructionTimeMultiplier;
-        public double HideoutProductionTimeMultiplier;
-        public bool AccessLabsWithoutCard;
-        public bool AllowExitFromAnySide;
-        public bool ConvertCooperationExits;
-        public bool DisableCustomBotWaves;
-        public bool DisableFleaMarket;
-        public bool DisableFallDamage;
-        public bool DisableScavengerMode;
-        public bool DisableSkillFatigue;
-        public bool DisableRunthroughs;
-        public bool ExtendRaidTimerToHour;
-        public bool ExtendKeyUsageLimit;
-        public bool ForceAllExitsAvailable;
-        public bool InstantHideoutConstruction;
-        public bool InstantHideoutProduction;
-        public bool PatchScavengerExits;
-        public bool RemoveFoundInRaidQuestConditions;
+        public int RaiderToPmc;
+        public int RogueToPmc;
+        public int ScavengerToPmc;
+        public int FleaMarketAccessLevel; // trader
+        public int HeadHitpoints; // player
+        public int ChestHitpoints; // player
+        public int StomachHitpoints; // player
+        public int LeftArmHitpoints; // player
+        public int LeftLegHitpoints; // player
+        public int RightArmHitpoints; // player
+        public int RightLegHitpoints; // player
+        public int PmcFriendlyChance; // npc
+        public int PmcBackpackMaxValue; // npc
+        public int PmcVestMaxValue; // npc
+        public int ScavengerModeCooldown; // game
+        public int TimeToDeploy; // game
+        public int UsecToBearRatio; // npc
+        public double CustomsAirdropChance; // raid
+        public double WoodsAirdropChance; // raid
+        public double LighthouseAirdropChance; // raid
+        public double ShorelineAirdropChance; // raid
+        public double StreetsAirdropChance; // raid
+        public double ReserveAirdropChance; // raid
+        public double InterchangeAirdropChance; // raid
+        public double BossHealthMultiplier; // npc
+        public double BossFollowerHealthMultiplier; // npc
+        public double ScavengerHealthMultiplier; // npc
+        public double SpecialBotHealthMultiplier; // npc
+        public double ExtractExperienceMultiplier; // game
+        public double KilledExperienceMultiplier; // game
+        public double HideoutConstructionTimeMultiplier; // player
+        public double HideoutProductionTimeMultiplier; // player
+        public bool AccessLabsWithoutCard; // game
+        public bool AllowExitFromAnySide; // raid
+        public bool ConvertCooperationExits; // raid
+        public bool DisableCustomBotWaves; // raid
+        public bool DisableFleaMarket; // trader
+        public bool DisableFallDamage; // game
+        public bool DisableScavengerMode; // game
+        public bool DisableSkillFatigue; // game
+        public bool DisableRunthroughs; // game
+        public bool ExtendRaidTimerToHour; // raid
+        public bool ExtendKeyUsageLimit; // game
+        public bool ForceAllExitsAvailable; // raid
+        public bool InstantHideoutConstruction; // player
+        public bool InstantHideoutProduction; // player
+        public bool PatchScavengerExits; // raid
+        public bool RemoveFoundInRaidQuestConditions; // game
 
         public ConfigSchema()
         {
             CustomsReshalaBoss = new List<string>() { "35", "4" };
             CustomsGoonsquadBoss = new List<string>() { "35" };
-            CustomsCultistBoss = new List<string>() { "15", "4" };
+            CustomsCultistBoss = new List<string>() { "15" };
             DayFactoryTagillaBoss = new List<string>() { "30" };
             NightFactoryTagillaBoss = new List<string>() { "23" };
-            NightFactoryCultistBoss = new List<string>() { "10", "2" };
+            NightFactoryCultistBoss = new List<string>() { "10" };
             InterchangeKillaBoss = new List<string>() { "30" };
-            LighthouseZryachiyBoss = new List<string>() { "100", "2" };
-            LighthouseGoonsquadBoss = new List<string>() { "35", "Zone_TreatmentContainers,Zone_Chalet" };
+            LighthouseGoonsquadBoss = new List<string>() { "35" };
             ReserveGlukharBoss = new List<string>() { "35", "2", "2", "2" };
-            ShorelineSanitarBoss = new List<string>() { "35", "2,3", "ZoneGreenHouses,ZoneSanatorium1,ZoneGreenHouses,ZoneSanatorium2,ZonePort" };
-            ShorelineCultistBoss = new List<string>() { "12", "3" };
+            ShorelineSanitarBoss = new List<string>() { "35", "2", "ZoneGreenHouses,ZoneSanatorium1,ZoneGreenHouses,ZoneSanatorium2,ZonePort" };
+            ShorelineGoonsquadBoss = new List<string>() { "35" };
+            ShorelineCultistBoss = new List<string>() { "12" };
             StreetsKabanBoss = new List<string>() { "35", "6" };
             StreetsKillaBoss = new List<string>() { "5" };
             WoodsShturmanBoss = new List<string>() { "35", "2" };
             WoodsGoonsquadBoss = new List<string>() { "35" };
-            WoodsCultistBoss = new List<string>() { "15", "4" };
-            RaiderToPmc = new List<int>() { 0, 0 };
-            RogueToPmc = new List<int>() { 0, 0 };
-            ScavengerToPmc = new List<int>() { 0, 0 };
+            WoodsCultistBoss = new List<string>() { "15" };
+            RaiderToPmc = 0;
+            RogueToPmc = 0;
+            ScavengerToPmc = 0;
             FleaMarketAccessLevel = 15;
             HeadHitpoints = 35;
             ChestHitpoints = 85;
