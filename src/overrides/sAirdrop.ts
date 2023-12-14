@@ -12,12 +12,12 @@ export default class sAirdrop
         const configServer = container.resolve<ConfigServer>("ConfigServer");
         const airdrop = configServer.getConfig<IAirdropConfig>(ConfigTypes.AIRDROP).airdropChancePercent;
 
-        airdrop.bigmap = config["CUSTOMS"];
-        airdrop.woods = config["WOODS"];
-        airdrop.lighthouse = config["LIGHTHOUSE"];
-        airdrop.shoreline = config["SHORELINE"];
-        airdrop.interchange = config["INTERCHANGE"];
-        airdrop.reserve = config["RESERVE"];
-        airdrop.tarkovStreets = config["STREETS"];
+        airdrop.bigmap = config.CustomsAirdropChance;
+        airdrop.woods = config.WoodsAirdropChance;
+        airdrop.lighthouse = config.LighthouseAirdropChance;
+        airdrop.shoreline = config.ShorelineAirdropChance;
+        airdrop.interchange = config.InterchangeAirdropChance;
+        airdrop.reserve = config.ReserveAirdropChance;
+        airdrop.tarkovStreets = config.StreetsAirdropChance;
     }
 }

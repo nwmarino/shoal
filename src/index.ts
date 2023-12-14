@@ -1,5 +1,4 @@
 import { DependencyContainer } from "tsyringe";
-import { ILogger } from "@spt-aki/models/spt/utils/ILogger";
 
 import * as config from "../config/data.json";
 
