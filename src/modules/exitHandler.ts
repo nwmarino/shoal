@@ -9,12 +9,15 @@ import ExitPatch from "./ExitPatch";
 
 export default class ExitHandler
 {
-    constructor()
+    config: any;
+    constructor(config: any)
     {
+        this.config = config;
         const tables: IDatabaseTables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
         const locations: ILocations = tables.locations;
         const mapNames: Set<string> = this.getMaps();
-        ExitPatch.patch(container);
+        if (this.config.PatchScavengerExits)
+            ExitPatch.patch(container);
         this.modExits(locations, mapNames);
     }
 
@@ -26,15 +29,18 @@ export default class ExitHandler
 
             for (const exit of map.exits)
             {
-                this.indiscriminateExits(exit, map);
+                if (this.config.AllowExitFromAnySide || this.config.PatchScavengerExits)
+                    this.indiscriminateExits(exit, map);
                 exit.ExfiltrationType = "Individual";
                 exit.PlayersCount = 0;
-                exit.Chance = 100;
+                if (this.config.ForceAllExitsAvailable)
+                    exit.Chance = 100;
 
                 if (exit.PassageRequirement === "Train")
                     continue;
 
-                this.convertCoopExits(exit);
+                if (this.config.ConvertCooperationExits)
+                    this.convertCoopExits(exit);
             }
         }
     }
