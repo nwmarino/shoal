@@ -20,6 +20,6 @@ export default class Index
         sBot.exec(container, config);
         sHideout.exec(container, config);
         sPmc.exec(container, config);
-        new ExitHandler();
+        new ExitHandler(config);
     }
 }
