@@ -19,12 +19,12 @@ export default class sHideout
             for (const stage in areas[area].stages)
             {
                 let current = areas[area].stages[stage].constructionTime;
-                if (config["INSTANT_HIDEOUT_CONSTRUCTION"])
+                if (config.InstantHideoutConstruction)
                 {
                     current = 1
                     continue;
                 }
-                current *= config["CONSTRUCTION_TIME_MULT"];
+                current *= config.HideoutConstructionTimeMultiplier;
             }
     }
 
@@ -34,12 +34,12 @@ export default class sHideout
         for (const item in items)
         {
             let current = items[item].productionTime;
-            if (config["INSTANT_HIDEOUT_PRODUCTION"])
+            if (config.InstantHideoutProduction)
             {
                 current = 1
                 continue;
             }
-            current *= config["PRODUCTION_TIME_MULT"];
+            current *= config.HideoutProductionTimeMultiplier;
         }
     }
 }
