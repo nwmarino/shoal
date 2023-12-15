@@ -63,7 +63,7 @@ namespace Gui
         private void saveButton_Click(object sender, EventArgs e)
         {
             string json = JsonConvert.SerializeObject(schema, Formatting.Indented);
-            System.IO.File.WriteAllText(@"data.json", json);
+            System.IO.File.WriteAllText(@"./config/data.json", json);
         }
 
         private void labCardToggle_CheckedChanged(object sender, EventArgs e)

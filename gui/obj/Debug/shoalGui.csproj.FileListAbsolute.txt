@@ -34,3 +34,7 @@ C:\Users\nwm11\Source\Repos\nwmarino\shoal\gui\obj\Debug\shoalGui.csproj.CoreCom
 C:\Users\nwm11\Source\Repos\nwmarino\shoal\gui\obj\Debug\shoalGui.csproj.CopyComplete
 C:\Users\nwm11\Source\Repos\nwmarino\shoal\gui\obj\Debug\shoalGui.exe
 C:\Users\nwm11\Source\Repos\nwmarino\shoal\gui\obj\Debug\shoalGui.pdb
+C:\Users\nwm11\Source\Repos\nwmarino\shoal\gui\bin\Debug\shoalGui.exe.manifest
+C:\Users\nwm11\Source\Repos\nwmarino\shoal\gui\bin\Debug\shoalGui.application
+C:\Users\nwm11\Source\Repos\nwmarino\shoal\gui\obj\Debug\shoalGui.exe.manifest
+C:\Users\nwm11\Source\Repos\nwmarino\shoal\gui\obj\Debug\shoalGui.application
