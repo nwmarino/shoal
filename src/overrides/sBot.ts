@@ -8,10 +8,10 @@ export default class sBot
     static exec(container: DependencyContainer, config: any): void
     {
         const bots = container.resolve<DatabaseServer>("DatabaseServer").getTables().bots;
-        const scav = config["SCAV_HP_MULT"];
-        const special = config["SPEC_HP_MULT"];
-        const boss = config["BOSS_HP_MULT"];
-        const follower = config["FOLL_HP_MULT"];
+        const scav = config.ScavengerHealthMultiplier;
+        const special = config.SpecialBotHealthMultiplier;
+        const boss = config.BossHealthMultiplier;
+        const follower = config.BossFollowerHealthMultiplier;
         this.modifyHealth(bots.types, config, scav, special, boss, follower);
     }
 
