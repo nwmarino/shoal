@@ -15,13 +15,13 @@ export default class ExitHandler
         this.config = config;
         const tables: IDatabaseTables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
         const locations: ILocations = tables.locations;
-        const mapNames: Set<string> = this.getMaps();
+        const mapNames: Set<string> = this.GetMaps();
         if (this.config.PatchScavengerExits)
             ExitPatch.patch(container);
-        this.modExits(locations, mapNames);
+        this.ModifyExits(locations, mapNames);
     }
 
-    private modExits(locations: ILocations, mapNames: Set<string>): void
+    private ModifyExits(locations: ILocations, mapNames: Set<string>): void
     {
         for (const key of mapNames)
         {
@@ -30,7 +30,7 @@ export default class ExitHandler
             for (const exit of map.exits)
             {
                 if (this.config.AllowExitFromAnySide || this.config.PatchScavengerExits)
-                    this.indiscriminateExits(exit, map);
+                    this.OpenExitsToAnySide(exit, map);
                 exit.ExfiltrationType = "Individual";
                 exit.PlayersCount = 0;
                 if (this.config.ForceAllExitsAvailable)
@@ -40,22 +40,20 @@ export default class ExitHandler
                     continue;
 
                 if (this.config.ConvertCooperationExits)
-                    this.convertCoopExits(exit);
+                    this.ConvertCoopExits(exit);
             }
         }
     }
 
-    // makes exits available from all spawn sides
-    private indiscriminateExits(exit: Exit, location: ILocationBase): void
+    private OpenExitsToAnySide(exit: Exit, location: ILocationBase): void
     {
-        const allSpawnPoints = this.getSides(location);
+        const allSpawnPoints = this.GetEntryPoints(location);
 
         if (exit.EntryPoints !== allSpawnPoints)
             exit.EntryPoints = allSpawnPoints;
     }
 
-    // makes scav co-op exits regular pmc exits
-    private convertCoopExits(exit: Exit): void
+    private ConvertCoopExits(exit: Exit): void
     {
         if (exit.PassageRequirement !== "ScavCooperation")
             return;
@@ -65,7 +63,7 @@ export default class ExitHandler
     }
 
     // yoinked from open extracts... credit to them
-    private getSides(location: ILocationBase): string
+    private GetEntryPoints(location: ILocationBase): string
     {
         const entryPointsSet = new Set<string>();
         for (const extract in location.exits)
@@ -76,8 +74,7 @@ export default class ExitHandler
         return Array.from(entryPointsSet).join(",");
     }
 
-    // returns all valid map names
-    private getMaps(): Set<string>
+    private GetMaps(): Set<string>
     {
         return new Set<string>([
             "bigmap",

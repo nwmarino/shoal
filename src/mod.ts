@@ -1,21 +1,29 @@
+/* eslint-disable @typescript-eslint/brace-style */
 import { DependencyContainer } from "tsyringe";
 import { IPostDBLoadMod } from "@spt-aki/models/external/IPostDBLoadMod";
+import { ILogger } from "@spt-aki/models/spt/utils/ILogger";
+import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor";
+
 import * as config from "../config/data.json";
 
-import sBase from "./modules/sBase";
-import sAirdrop from "./modules/ShAirdrop";
-import sBoss from "./modules/sBoss";
-import sBot from "./modules/ShBot";
-import sHideout from "./modules/ShHideout";
-import sPmc from "./modules/ShPmc";
+import Module from "./modules/Module";
+import Bot from "./modules/Bot";
+import Generic from "./modules/Generic";
+import Hideout from "./modules/Hideout";
+import Item from "./modules/Item";
+import Pmc from "./modules/Pmc";
+import Trader from "./modules/Trader";
 import ExitHandler from "./helpers/ExitHandler";
 
 export default class Mod implements IPostDBLoadMod
 {
     public postDBLoad(container: DependencyContainer): void
     {
-        const modules: readonly
-        //new ExitHandler(config);
+        const logger = container.resolve<ILogger>("WinstonLogger");
+        const modules: readonly typeof Module[] = [Bot, Generic, Hideout, Item, Pmc, Trader];
+        modules.forEach(mod => { new mod(container, config); });
+        new ExitHandler(config);
+        logger.logWithColor("shoal has patched successfully.", LogTextColor.BLUE);
     }
 }
 

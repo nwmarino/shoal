@@ -23,7 +23,7 @@ export default class ExitPatch
 
             if (scavExits)
                 for (const exit in scavExits)
-                    mapBaseFile.exits.push(ExitGenerator.genExit(scavExits[exit], true, "None", 0))
+                    mapBaseFile.exits.push(ExitGenerator.GenerateExit(scavExits[exit], true, "None", 0))
         }
     }
 }

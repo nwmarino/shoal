@@ -2,7 +2,7 @@ import { DependencyContainer } from "tsyringe";
 import { DatabaseServer } from "../../types/servers/DatabaseServer";
 import Module from "./Module";
 
-export default class SItem extends Module
+export default class Item extends Module
 {
     constructor(container: DependencyContainer, config: any)
     {

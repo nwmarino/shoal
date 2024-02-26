@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 export class ExitGenerator
 {
-    static genExit(name: string, enabled: boolean, req: string, cost: number): object
+    static GenerateExit(name: string, enabled: boolean, req: string, cost: number): object
     {
         let currency: string = "";
 
