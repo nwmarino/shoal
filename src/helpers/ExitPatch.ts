@@ -4,8 +4,8 @@ import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 import { IDatabaseTables } from "../../types/models/spt/server/IDatabaseTables";
 import { ILocations } from "@spt-aki/models/spt/server/ILocations";
 
-import Exits from "./../data/Exits";
-import { ExitGenerator } from "./../utils/ExitGenerator";
+import Exits from "./Exits";
+import { ExitGenerator } from "./ExitGenerator";
 
 export default class ExitPatch
 {

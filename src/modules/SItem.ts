@@ -1,10 +1,12 @@
 import { DependencyContainer } from "tsyringe";
 import { DatabaseServer } from "../../types/servers/DatabaseServer";
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export default class sItem
+import Module from "./Module";
+
+export default class SItem extends Module
 {
-    static exec(container: DependencyContainer, config: any): void
+    constructor(container: DependencyContainer, config: any)
     {
+        super(container, config);
         const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
         const items = tables.templates.items;
 
