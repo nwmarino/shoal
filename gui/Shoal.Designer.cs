@@ -70,6 +70,8 @@ namespace Gui
             this.polarExitToggle = new System.Windows.Forms.CheckBox();
             this.raidLabel = new System.Windows.Forms.Label();
             this.botPanel = new System.Windows.Forms.Panel();
+            this.shorelineGoonsChanceLabel = new System.Windows.Forms.Label();
+            this.shorelineGoonsChanceNumer = new System.Windows.Forms.NumericUpDown();
             this.sanitarSpawns = new System.Windows.Forms.TextBox();
             this.shorelineCultChanceLabel = new System.Windows.Forms.Label();
             this.sanitarLabel = new System.Windows.Forms.Label();
@@ -170,8 +172,6 @@ namespace Gui
             this.shoalLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.shoalicon = new System.Windows.Forms.PictureBox();
-            this.shorelineGoonsChanceNumer = new System.Windows.Forms.NumericUpDown();
-            this.shorelineGoonsChanceLabel = new System.Windows.Forms.Label();
             this.saveButton = new Gui.models.SaveButton();
             this.traderPanelButton = new Gui.models.PanelButton();
             this.botPanelButton = new Gui.models.PanelButton();
@@ -192,6 +192,7 @@ namespace Gui
             ((System.ComponentModel.ISupportInitialize)(this.woodsAirdropNumer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customsAirdropNumer)).BeginInit();
             this.botPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shorelineGoonsChanceNumer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shorelineCultChanceNumer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanitarFollowersNumer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanitarChanceNumer)).BeginInit();
@@ -237,7 +238,6 @@ namespace Gui
             this.traderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fleaMarketAccessNumer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoalicon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shorelineGoonsChanceNumer)).BeginInit();
             this.SuspendLayout();
             // 
             // gamePanel
@@ -843,6 +843,32 @@ namespace Gui
             this.botPanel.Name = "botPanel";
             this.botPanel.Size = new System.Drawing.Size(531, 548);
             this.botPanel.TabIndex = 2;
+            // 
+            // shorelineGoonsChanceLabel
+            // 
+            this.shorelineGoonsChanceLabel.AutoSize = true;
+            this.shorelineGoonsChanceLabel.ForeColor = System.Drawing.Color.White;
+            this.shorelineGoonsChanceLabel.Location = new System.Drawing.Point(201, 518);
+            this.shorelineGoonsChanceLabel.Name = "shorelineGoonsChanceLabel";
+            this.shorelineGoonsChanceLabel.Size = new System.Drawing.Size(99, 13);
+            this.shorelineGoonsChanceLabel.TabIndex = 83;
+            this.shorelineGoonsChanceLabel.Text = "goonsquad chance";
+            // 
+            // shorelineGoonsChanceNumer
+            // 
+            this.shorelineGoonsChanceNumer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.shorelineGoonsChanceNumer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shorelineGoonsChanceNumer.ForeColor = System.Drawing.Color.White;
+            this.shorelineGoonsChanceNumer.Location = new System.Drawing.Point(146, 516);
+            this.shorelineGoonsChanceNumer.Name = "shorelineGoonsChanceNumer";
+            this.shorelineGoonsChanceNumer.Size = new System.Drawing.Size(49, 20);
+            this.shorelineGoonsChanceNumer.TabIndex = 82;
+            this.shorelineGoonsChanceNumer.Value = new decimal(new int[] {
+            35,
+            0,
+            0,
+            0});
+            this.shorelineGoonsChanceNumer.ValueChanged += new System.EventHandler(this.shorelineGoonsChanceNumer_ValueChanged);
             // 
             // sanitarSpawns
             // 
@@ -2196,9 +2222,9 @@ namespace Gui
             this.versionLabel.ForeColor = System.Drawing.Color.White;
             this.versionLabel.Location = new System.Drawing.Point(477, 12);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(45, 19);
+            this.versionLabel.Size = new System.Drawing.Size(41, 19);
             this.versionLabel.TabIndex = 6;
-            this.versionLabel.Text = "v2.0.0";
+            this.versionLabel.Text = "v2.1.1";
             // 
             // shoalicon
             // 
@@ -2210,32 +2236,6 @@ namespace Gui
             this.shoalicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.shoalicon.TabIndex = 7;
             this.shoalicon.TabStop = false;
-            // 
-            // shorelineGoonsChanceNumer
-            // 
-            this.shorelineGoonsChanceNumer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.shorelineGoonsChanceNumer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.shorelineGoonsChanceNumer.ForeColor = System.Drawing.Color.White;
-            this.shorelineGoonsChanceNumer.Location = new System.Drawing.Point(146, 516);
-            this.shorelineGoonsChanceNumer.Name = "shorelineGoonsChanceNumer";
-            this.shorelineGoonsChanceNumer.Size = new System.Drawing.Size(49, 20);
-            this.shorelineGoonsChanceNumer.TabIndex = 82;
-            this.shorelineGoonsChanceNumer.Value = new decimal(new int[] {
-            35,
-            0,
-            0,
-            0});
-            this.shorelineGoonsChanceNumer.ValueChanged += new System.EventHandler(this.shorelineGoonsChanceNumer_ValueChanged);
-            // 
-            // shorelineGoonsChanceLabel
-            // 
-            this.shorelineGoonsChanceLabel.AutoSize = true;
-            this.shorelineGoonsChanceLabel.ForeColor = System.Drawing.Color.White;
-            this.shorelineGoonsChanceLabel.Location = new System.Drawing.Point(201, 518);
-            this.shorelineGoonsChanceLabel.Name = "shorelineGoonsChanceLabel";
-            this.shorelineGoonsChanceLabel.Size = new System.Drawing.Size(99, 13);
-            this.shorelineGoonsChanceLabel.TabIndex = 83;
-            this.shorelineGoonsChanceLabel.Text = "goonsquad chance";
             // 
             // saveButton
             // 
@@ -2437,6 +2437,7 @@ namespace Gui
             ((System.ComponentModel.ISupportInitialize)(this.customsAirdropNumer)).EndInit();
             this.botPanel.ResumeLayout(false);
             this.botPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shorelineGoonsChanceNumer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shorelineCultChanceNumer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanitarFollowersNumer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanitarChanceNumer)).EndInit();
@@ -2484,7 +2485,6 @@ namespace Gui
             this.traderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fleaMarketAccessNumer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoalicon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shorelineGoonsChanceNumer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
