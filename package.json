@@ -1,9 +1,9 @@
 {
     "name": "shoal",
-    "version": "1.0.0",
+    "version": "2.1.0",
     "main": "src/mod.js",
     "license": "MIT",
-    "author": "snt",
+    "author": "nwmarino",
     "akiVersion": "3.x.x",
     "scripts": {
         "setup": "npm i",

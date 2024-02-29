@@ -4,11 +4,13 @@ import { ConfigServer } from "@spt-aki/servers/ConfigServer";
 import { ConfigTypes } from "@spt-aki/models/enums/ConfigTypes";
 import { IPmcConfig } from "@spt-aki/models/spt/config/IPmcConfig";
 import { ILocationConfig } from "@spt-aki/models/spt/config/ILocationConfig";
+import Module from "./Module";
 
-export default class sPmc
+export default class Pmc extends Module
 {
-    static exec(container: DependencyContainer, config: any): void
+    constructor(container: DependencyContainer, config: any)
     {
+        super(container, config);
         const configServer = container.resolve<ConfigServer>("ConfigServer");
         const pmc = configServer.getConfig<IPmcConfig>(ConfigTypes.PMC);
         const location = configServer.getConfig<ILocationConfig>(ConfigTypes.LOCATION);

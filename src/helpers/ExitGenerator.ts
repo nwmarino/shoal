@@ -1,11 +1,11 @@
-// utility class to generate exits.
+/* eslint-disable @typescript-eslint/naming-convention */
 export class ExitGenerator
 {
-    static genExit(name: string, enabled: boolean, req: string, cost: number): object
+    static GenerateExit(name: string, enabled: boolean, req: string, cost: number): object
     {
         let currency: string = "";
 
-        // so that paid exits are not free.
+        // so that paid exits are not free
         if (req === "TransferItem" && cost === 0)
             req = "None";
 

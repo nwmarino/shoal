@@ -1,12 +1,17 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { DependencyContainer } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
+import { ConfigServer } from "@spt-aki/servers/ConfigServer";
+import { IAirdropConfig } from "@spt-aki/models/spt/config/IAirdropConfig";
+import { ConfigTypes } from "@spt-aki/models/enums/ConfigTypes";
+import Module from "./Module";
 
-// general gameplay changes
-export default class sBase
+export default class Generic extends Module
 {
-    static exec(container: DependencyContainer, config: any): void
+    constructor(container: DependencyContainer, config: any)
     {
+        super(container, config);
+        this.ModifyAirdrops();
         const tables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
         const globals = tables.globals.config;
         const quests = tables.templates.quests;
@@ -63,5 +68,19 @@ export default class sBase
                 for (const condition in quest["conditions"]["AvailableForFinish"])
                     if (condition["_parent"] == "HandoverItem" && !condition["_props"].onlyFoundInRaid)
                         condition["_props"].onlyFoundInRaid = false;
+    }
+
+    ModifyAirdrops(): void
+    {
+        const configServer = this.container.resolve<ConfigServer>("ConfigServer");
+        const airdrop = configServer.getConfig<IAirdropConfig>(ConfigTypes.AIRDROP).airdropChancePercent;
+
+        airdrop.bigmap = this.config.CustomsAirdropChance;
+        airdrop.woods = this.config.WoodsAirdropChance;
+        airdrop.lighthouse = this.config.LighthouseAirdropChance;
+        airdrop.shoreline = this.config.ShorelineAirdropChance;
+        airdrop.interchange = this.config.InterchangeAirdropChance;
+        airdrop.reserve = this.config.ReserveAirdropChance;
+        airdrop.tarkovStreets = this.config.StreetsAirdropChance;
     }
 }

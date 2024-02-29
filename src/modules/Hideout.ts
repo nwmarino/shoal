@@ -2,44 +2,44 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { DependencyContainer } from "tsyringe";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
+import Module from "./Module";
 
-export default class sHideout
+export default class Hideout extends Module
 {
-    static exec(container: DependencyContainer, config: any): void
+    constructor(container: DependencyContainer, config: any)
     {
+        super(container, config);
         const hideout = container.resolve<DatabaseServer>("DatabaseServer").getTables().hideout;
-        this.constructionInj(hideout.areas, config);
-        this.productionInj(hideout.production, config);
+        this.ModifyHideoutConstruction(hideout.areas);
+        this.ModifyHideoutProduction(hideout.production);
     }
 
-    // modify hideout construction timings
-    static constructionInj(areas: any, config: any): void
+    ModifyHideoutConstruction(areas: any): void
     {
         for (const area in areas)
             for (const stage in areas[area].stages)
             {
                 let current = areas[area].stages[stage].constructionTime;
-                if (config.InstantHideoutConstruction)
+                if (this.config.InstantHideoutConstruction)
                 {
                     current = 1
                     continue;
                 }
-                current *= config.HideoutConstructionTimeMultiplier;
+                current *= this.config.HideoutConstructionTimeMultiplier;
             }
     }
 
-    // modify hideout production timings
-    static productionInj(items: any, config: any): void
+    ModifyHideoutProduction(items: any): void
     {
         for (const item in items)
         {
             let current = items[item].productionTime;
-            if (config.InstantHideoutProduction)
+            if (this.config.InstantHideoutProduction)
             {
                 current = 1
                 continue;
             }
-            current *= config.HideoutProductionTimeMultiplier;
+            current *= this.config.HideoutProductionTimeMultiplier;
         }
     }
 }
