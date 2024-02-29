@@ -43,7 +43,6 @@ export default class Bot extends Module
         shoreline.BossLocationSpawn[2].BossZone = config.ShorelineSanitarBoss[2];
         shoreline.BossLocationSpawn[1].BossChance = config.ShorelineGoonsquadBoss[0];
         shoreline.BossLocationSpawn[3].BossChance = config.ShorelineCultistBoss[0];
-        shoreline.BossLocationSpawn[4].BossChance = config.ShorelineCultistBoss[0];
         streets.BossLocationSpawn[0].BossChance = config.StreetsKabanBoss[0];
         streets.BossLocationSpawn[0].BossEscortAmount = config.StreetsKabanBoss[1];
         streets.BossLocationSpawn[1].BossChance = config.StreetsKillaBoss[0];

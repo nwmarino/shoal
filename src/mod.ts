@@ -23,7 +23,7 @@ export default class Mod implements IPostDBLoadMod
         const modules: readonly typeof Module[] = [Bot, Generic, Hideout, Item, Pmc, Trader];
         modules.forEach(mod => { new mod(container, config); });
         new ExitHandler(config);
-        logger.logWithColor("shoal has patched successfully.", LogTextColor.BLUE);
+        logger.logWithColor("shoal has patched successfully.", LogTextColor.CYAN);
     }
 }
 
