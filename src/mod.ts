@@ -21,7 +21,7 @@ export default class Mod implements IPostDBLoadMod
     {
         const logger = container.resolve<ILogger>("WinstonLogger");
         const modules: readonly typeof Module[] = [Bot, Generic, Hideout, Item, Pmc, Trader];
-        modules.forEach(mod => { new mod(container, config); });
+        modules.forEach(modu => { new modu(container, config); });
         new ExitHandler(config);
         logger.logWithColor("shoal has patched successfully.", LogTextColor.CYAN);
     }
