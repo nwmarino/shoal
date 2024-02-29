@@ -86,7 +86,8 @@ export default class ExitHandler
             "rezervbase",
             "shoreline",
             "tarkovstreets",
-            "woods"
+            "woods",
+            "sandbox"
         ]);
     }
 }

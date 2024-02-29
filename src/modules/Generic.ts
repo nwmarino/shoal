@@ -49,14 +49,34 @@ export default class Generic extends Module
         if (config.DisableScavengerMode)
         {
             for (const map in tables.locations)
-                tables.locations[map].base.DisabledForScav = true;
+            {
+                try
+                {
+                    tables.locations[map].base.DisabledForScav = true;
+                }
+                catch (TypeError)
+                {
+                    continue;
+                }
+            }   
             globals.SavagePlayCooldown = 80000;
         }
 
         if (config.ExtendRaidTimerToHour)
+        {
             for (const map in tables.locations)
-                tables.locations[map].base.EscapeTimeLimit = 60;
-
+            {
+                try
+                {
+                    tables.locations[map].base.EscapeTimeLimit = 60;
+                }
+                catch (TypeError)
+                {
+                    continue;
+                }
+            }
+        }
+        
         if (config.DisableRunthroughs)
         {
             globals.exp.match_end.survived_exp_requirement = 0;

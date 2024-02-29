@@ -7,6 +7,17 @@ export default class Exits
         scav: string[];
     }
     {
+        const sandboxExfils = {
+            map: ["sandbox"],
+            pmc: [
+                "Unity_free_exit",
+                "Sandbox_VExit",
+                "Sniper_exit",
+                "Scav_coop_exit",
+                "Nakatani_stairs_free_exit"
+            ],
+            scav: []
+        }
         const bigmapExfils = {
             map: ["bigmap"],
             pmc: [
@@ -185,6 +196,7 @@ export default class Exits
             ]
         }
         const maps = [
+            sandboxExfils,
             bigmapExfils,
             factoryExfils,
             interchangeExfils,
