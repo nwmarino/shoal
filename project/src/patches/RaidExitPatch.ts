@@ -3,10 +3,11 @@ import { Exit, ILocationBase } from "@spt-aki/models/eft/common/ILocationBase";
 import { IDatabaseTables } from "@spt-aki/models/spt/server/IDatabaseTables";
 import { ILocations } from "@spt-aki/models/spt/server/ILocations";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
+
 import LocationInfo from "src/models/LocationInfo";
 import ServerPatch from "src/models/ServerPatch";
 
-export default class GameExitPatch extends ServerPatch
+export default class RaidExitPatch extends ServerPatch
 {
     readonly configJson: any
     
@@ -18,7 +19,7 @@ export default class GameExitPatch extends ServerPatch
         const tables: IDatabaseTables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
         const maps: ILocations = tables.locations;
         const mapNames: Set<string> = LocationInfo.fetchMapNames();
-        if (this.configJson.PatchScavengerExitsForPlayerType) this.importScavengerExits(maps);
+        if (this.configJson.PatchScavengerExits) this.importScavengerExits(maps);
         this.modifyPlayerExits(maps, mapNames);
     }
 
@@ -56,10 +57,10 @@ export default class GameExitPatch extends ServerPatch
                 if (this.configJson.AllowExitFromAnySide || this.configJson.PatchScavengerExits)
                     exit.EntryPoints = this.getAllEntryPoints(map);
                 
-                if (this.configJson.ForceExitsBeAvailable)
+                if (this.configJson.ForceExitsOpen)
                     exit.Chance = 100;
 
-                if (this.configJson.ConvertCooperationExitsToNormal)
+                if (this.configJson.ConvertCooperationExits)
                     this.convertCoopExit(exit);
             }
         }

@@ -14,7 +14,8 @@ export default class Mod implements IPostDBLoadMod
 
         try
         {
-            new patches.UserExitPatch(configJson).enable(container);
+            new patches.HideoutPatch(configJson).enable(container);
+            new patches.RaidExitPatch(configJson).enable(container);
         }
         catch (err)
         {
