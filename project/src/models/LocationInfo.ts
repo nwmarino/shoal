@@ -1,13 +1,25 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-export default class Exits
+export default class LocationInfo
 {
-    static getExitNames(map: string): {
-        map: string[];
-        pmc: string[];
-        scav: string[];
-    }
+    static fetchMapNames(): Set<string>
     {
-        const sandboxExfils = {
+        return new Set<string>([
+            "bigmap",
+            "factory4_day",
+            "factory4_night",
+            "interchange",
+            "laboratory",
+            "lighthouse",
+            "rezervbase",
+            "shoreline",
+            "tarkovstreets",
+            "woods",
+            "sandbox"
+        ]);
+    }
+
+    static fetchExitNames(targetMap: string): { map: string[]; pmc: string[]; scav: string[]; }
+    {
+        const sandboxExits = {
             map: ["sandbox"],
             pmc: [
                 "Unity_free_exit",
@@ -18,7 +30,8 @@ export default class Exits
             ],
             scav: []
         }
-        const bigmapExfils = {
+
+        const bigmapExits = {
             map: ["bigmap"],
             pmc: [
                 "Crossroads",
@@ -50,7 +63,8 @@ export default class Exits
                 "Military Checkpoint"
             ]
         }
-        const factoryExfils = {
+
+        const factoryExits = {
             map: ["factory4_day", "factory4_night"],
             pmc: [
                 "Cellars",
@@ -63,7 +77,8 @@ export default class Exits
                 "Office Window"
             ]
         }
-        const interchangeExfils = {
+
+        const interchangeExits = {
             map: ["interchange"],
             pmc: [
                 "NW Exfil",
@@ -75,7 +90,8 @@ export default class Exits
             ],
             scav: []
         }
-        const laboratoryExfils = {
+
+        const laboratoryExits = {
             map: ["laboratory"],
             pmc: [
                 "lab_Parking_Gate",
@@ -88,7 +104,8 @@ export default class Exits
             ],
             scav: []
         }
-        const lighthouseExfils = {
+
+        const lighthouseExits = {
             map: ["lighthouse"],
             pmc: [
                 "EXFIL_Train",
@@ -107,7 +124,8 @@ export default class Exits
                 "Scav_Industrial_zone"
             ]
         }
-        const rezervbaseExfils = {
+
+        const rezervbaseExits = {
             map: ["rezervbase"],
             pmc: [
                 "EXFIL_Train",
@@ -124,7 +142,8 @@ export default class Exits
                 "Exit4"
             ]
         }
-        const shorelineExfils = {
+
+        const shorelineExits = {
             map: ["shoreline"],
             pmc: [
                 "Tunnel",
@@ -146,7 +165,8 @@ export default class Exits
                 "Adm Basement"
             ]
         }
-        const tarkovstreetsExfils = {
+
+        const tarkovstreetsExits = {
             map: ["tarkovstreets"],
             pmc: [
                 "E1",
@@ -171,7 +191,8 @@ export default class Exits
                 "scav_e8"
             ]
         }
-        const woodsExfils = {
+
+        const woodsExits = {
             map: ["woods"],
             pmc: [
                 "ZB-016",
@@ -195,20 +216,25 @@ export default class Exits
                 "RUAF Roadblock"
             ]
         }
+
         const maps = [
-            sandboxExfils,
-            bigmapExfils,
-            factoryExfils,
-            interchangeExfils,
-            laboratoryExfils,
-            lighthouseExfils,
-            rezervbaseExfils,
-            shorelineExfils,
-            tarkovstreetsExfils,
-            woodsExfils
+            sandboxExits,
+            bigmapExits,
+            factoryExits,
+            interchangeExits,
+            laboratoryExits,
+            lighthouseExits,
+            rezervbaseExits,
+            shorelineExits,
+            tarkovstreetsExits,
+            woodsExits
         ]
-        for (const m in maps)
-            if (maps[m].map.includes(map))
-                return maps[m];
+
+        maps.forEach(exitSet =>
+        {
+            if (exitSet.map.includes(targetMap)) return exitSet;
+        });
+
+        return { map: [], pmc: [], scav: [] };
     }
 }
