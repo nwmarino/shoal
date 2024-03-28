@@ -1,0 +1,109 @@
+{
+  "CustomsReshalaBoss": [
+    "35",
+    "4"
+  ],
+  "CustomsGoonsquadBoss": [
+    "35"
+  ],
+  "CustomsCultistBoss": [
+    "15"
+  ],
+  "DayFactoryTagillaBoss": [
+    "30"
+  ],
+  "NightFactoryTagillaBoss": [
+    "23"
+  ],
+  "NightFactoryCultistBoss": [
+    "10"
+  ],
+  "InterchangeKillaBoss": [
+    "30"
+  ],
+  "LighthouseGoonsquadBoss": [
+    "35"
+  ],
+  "ReserveGlukharBoss": [
+    "35",
+    "2",
+    "2",
+    "2"
+  ],
+  "ShorelineSanitarBoss": [
+    "35",
+    "2",
+    "ZoneGreenHouses,ZoneSanatorium1,ZoneGreenHouses,ZoneSanatorium2,ZonePort"
+  ],
+  "ShorelineGoonsquadBoss": [
+    "35"
+  ],
+  "ShorelineCultistBoss": [
+    "12"
+  ],
+  "StreetsKabanBoss": [
+    "35",
+    "6"
+  ],
+  "StreetsKillaBoss": [
+    "5"
+  ],
+  "WoodsShturmanBoss": [
+    "35",
+    "2"
+  ],
+  "WoodsGoonsquadBoss": [
+    "35"
+  ],
+  "WoodsCultistBoss": [
+    "15"
+  ],
+  "RaiderToPmc": 0,
+  "RogueToPmc": 0,
+  "ScavengerToPmc": 0,
+  "FleaMarketAccessLevel": 15,
+  "HeadHitpoints": 35,
+  "ChestHitpoints": 85,
+  "StomachHitpoints": 70,
+  "LeftArmHitpoints": 60,
+  "LeftLegHitpoints": 65,
+  "RightArmHitpoints": 60,
+  "RightLegHitpoints": 65,
+  "PmcFriendlyChance": 0,
+  "PmcBackpackMaxValue": 150000,
+  "PmcVestMaxValue": 50000,
+  "ScavengerModeCooldown": 1200,
+  "TimeToDeploy": 20,
+  "UsecToBearRatio": 50,
+  "CustomsAirdropChance": 5.0,
+  "WoodsAirdropChance": 5.0,
+  "LighthouseAirdropChance": 5.0,
+  "ShorelineAirdropChance": 5.0,
+  "StreetsAirdropChance": 5.0,
+  "ReserveAirdropChance": 5.0,
+  "InterchangeAirdropChance": 5.0,
+  "BossHealthMultiplier": 1.0,
+  "BossFollowerHealthMultiplier": 1.0,
+  "ScavengerHealthMultiplier": 1.0,
+  "SpecialBotHealthMultiplier": 1.0,
+  "ExtractExperienceMultiplier": 1.0,
+  "KilledExperienceMultiplier": 1.0,
+  "HideoutConstructionTimeMultiplier": 1.0,
+  "HideoutProductionTimeMultiplier": 1.0,
+  "AccessLabsWithoutCard": false,
+  "AllowExitFromAnySide": false,
+  "ConvertCooperationExits": false,
+  "DisableCustomBotWaves": false,
+  "DisableFleaMarket": false,
+  "DisableFallDamage": false,
+  "DisableScavengerMode": false,
+  "DisableSkillFatigue": false,
+  "DisableRunthroughs": false,
+  "ExtendRaidTimerToHour": false,
+  "ExtendKeyUsageLimit": false,
+  "ForceAllExitsAvailable": false,
+  "InstantHideoutConstruction": false,
+  "InstantHideoutProduction": false,
+  "PatchScavengerExits": false,
+  "RemoveFoundInRaidQuestConditions": false
+}
