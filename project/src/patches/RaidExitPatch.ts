@@ -1,23 +1,24 @@
-import { DependencyContainer } from "tsyringe";
+/* eslint-disable @typescript-eslint/brace-style */
 import { Exit, ILocationBase } from "@spt-aki/models/eft/common/ILocationBase";
 import { IDatabaseTables } from "@spt-aki/models/spt/server/IDatabaseTables";
 import { ILocations } from "@spt-aki/models/spt/server/ILocations";
-import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 
 import LocationInfo from "../models/LocationInfo";
 import ServerPatch from "../models/ServerPatch";
+import ModStorage from "../models/ModStorage";
 
-export default class RaidExitPatch extends ServerPatch
+export default class RaidExitPatch implements ServerPatch
 {    
-    // eslint-disable-next-line @typescript-eslint/brace-style
-    constructor (config: any) { super(config); }
+    expiremental: boolean
 
-    public enable(container: DependencyContainer): boolean | void
+    constructor(expiremental?: boolean) { this.expiremental = expiremental; } 
+
+    public enable(): boolean | void
     {
-        const tables: IDatabaseTables = container.resolve<DatabaseServer>("DatabaseServer").getTables();
+        const tables = ModStorage.fetchContainer(true) as IDatabaseTables;
         const maps: ILocations = tables.locations;
         const mapNames: Set<string> = LocationInfo.fetchMapNames();
-        if (this.configJson.PatchScavengerExits) this.importScavengerExits(maps);
+        if (ModStorage.getField("PatchScavengerExits")) { this.importScavengerExits(maps); }
         this.modifyPlayerExits(maps, mapNames);
     }
 
@@ -29,9 +30,7 @@ export default class RaidExitPatch extends ServerPatch
             {
                 const baseFile = maps[key].base;
                 const scavExits: string[] = LocationInfo.fetchExitNames(key)?.scav;
-    
-                scavExits.forEach(exit =>
-                {
+                scavExits.forEach(exit => {
                     baseFile.exits.push(this.createExit(exit, true, "None", 0));
                 });
             }
@@ -42,24 +41,20 @@ export default class RaidExitPatch extends ServerPatch
     {
         for (const key of mapNames)
         {
-            const map: ILocationBase = locations[key].base;
-
-            for (const exit of map.exits)
+            const baseFile: ILocationBase = locations[key].base;
+            for (const exit of baseFile.exits)
             {
                 exit.ExfiltrationType = "Individual";
                 exit.PlayersCount = 0;
 
-                if (exit.PassageRequirement === "Train")
-                    continue;
+                if (exit.PassageRequirement === "Train") { continue; }
 
-                if (this.configJson.AllowExitFromAnySide || this.configJson.PatchScavengerExits)
-                    exit.EntryPoints = this.getAllEntryPoints(map);
+                if (ModStorage.getField("AllowExitFromAnySide") || ModStorage.getField("PatchScavengerExits"))
+                    exit.EntryPoints = this.getAllEntryPoints(baseFile);
                 
-                if (this.configJson.ForceExitsOpen)
-                    exit.Chance = 100;
+                if (ModStorage.getField("ForceExitsOpen")) { exit.Chance = 100; }
 
-                if (this.configJson.ConvertCooperationExits)
-                    this.convertCoopExit(exit);
+                if (ModStorage.getField("ConvertCooperationExits")) { this.convertCoopExit(exit); }
             }
         }
     }
@@ -71,14 +66,13 @@ export default class RaidExitPatch extends ServerPatch
         exit.RequirementTip = "";
     }
 
-    private getAllEntryPoints(location: ILocationBase): string
+    private getAllEntryPoints(baseFile: ILocationBase): string
     {
         const entryPointsSet = new Set<string>();
-        for (const exit in location.exits)
-        {
-            const entryPoints = location.exits[exit].EntryPoints.split(",");
+        baseFile.exits.forEach(exit => {
+            const entryPoints: string[] = exit.EntryPoints.split(",");
             entryPoints.forEach((entryPoint: string) => entryPointsSet.add(entryPoint));
-        }
+        });
         return Array.from(entryPointsSet).join(",");
     }
 

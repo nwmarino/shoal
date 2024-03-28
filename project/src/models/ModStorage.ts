@@ -14,7 +14,7 @@ export default abstract class ModStorage
         ModStorage._configJson = configJson;
     }
 
-    public static fetch(tables?: boolean): (DependencyContainer | IDatabaseTables)
+    public static fetchContainer(tables?: boolean): (DependencyContainer | IDatabaseTables)
     { 
         if (tables)
             return ModStorage._container.resolve<DatabaseServer>("DatabaseServer").getTables();

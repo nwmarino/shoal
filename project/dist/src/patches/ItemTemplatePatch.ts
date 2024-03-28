@@ -3,7 +3,7 @@ import { ITemplateItem } from "@spt-aki/models/eft/common/tables/ITemplateItem";
 import ServerPatch from "../models/ServerPatch";
 import ModStorage from "../models/ModStorage";
 
-export class ItemTemplatePatch implements ServerPatch
+export default class ItemTemplatePatch implements ServerPatch
 {
     expiremental: boolean
 
@@ -12,7 +12,7 @@ export class ItemTemplatePatch implements ServerPatch
 
     public enable(): boolean | void
     {
-        const tables = ModStorage.fetch(true) as IDatabaseTables;
+        const tables = ModStorage.fetchContainer(true) as IDatabaseTables;
         this.modifyItems(tables.templates.items);
     }
 
