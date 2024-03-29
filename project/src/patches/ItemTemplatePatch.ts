@@ -13,10 +13,10 @@ export default class ItemTemplatePatch implements ServerPatch
     public enable(): boolean | void
     {
         const tables = ModStorage.fetchContainer(true) as IDatabaseTables;
-        this.modifyItems(tables.templates.items);
+        this._modifyItems(tables.templates.items);
     }
 
-    private modifyItems(table: Record<string, ITemplateItem>): void
+    private _modifyItems(table: Record<string, ITemplateItem>): void
     {
         for (const item in table)
         {

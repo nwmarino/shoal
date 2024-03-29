@@ -12,6 +12,10 @@
     "HideoutAirFilterUsageRate": 1.0,
     "HideoutGpuBoost": 1.0,
 
-    "ExtendKeyUsageLimit": true
+    "ExtendKeyUsageLimit": true,
+
+    "DisableFleaMarket": true,
+    "FleaMarketAccessLevel": 20,
+    "ExtendClothingFactions": true
 
 }

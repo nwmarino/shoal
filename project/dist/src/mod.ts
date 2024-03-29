@@ -2,7 +2,7 @@ import { DependencyContainer } from "tsyringe";
 import { IPostDBLoadMod } from "@spt-aki/models/external/IPostDBLoadMod";
 import { ILogger } from "@spt-aki/models/spt/utils/ILogger";
 import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor";
-import { ItemTemplatePatch, HideoutPatch, RaidExitPatch } from "./patches/PatchLib";
+import { ItemTemplatePatch, HideoutPatch, RaidExitPatch, TradingPatch } from "./patches/PatchLib";
 
 import ModStorage from "./models/ModStorage";
 import * as configJson from "./config/shoal.config.json";
@@ -20,6 +20,7 @@ export default class Mod implements IPostDBLoadMod
             new ItemTemplatePatch().enable();
             new HideoutPatch().enable();
             new RaidExitPatch().enable();
+            new TradingPatch().enable();
         }
         catch (err: any)
         {

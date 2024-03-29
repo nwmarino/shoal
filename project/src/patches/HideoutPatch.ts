@@ -16,12 +16,12 @@ export default class HideoutPatch implements ServerPatch
     public enable(): boolean | void
     {
         const tables = ModStorage.fetchContainer(true) as IDatabaseTables;
-        this.modifyHideoutConstructionTime(tables.hideout.areas)
-        this.modifyHideoutProductionTime(tables.hideout.production);
-        this.applyHideoutSettingsPatch(tables.hideout.settings);
+        this._modifyHideoutConstructionTime(tables.hideout.areas)
+        this._modifyHideoutProductionTime(tables.hideout.production);
+        this._applyHideoutSettingsPatch(tables.hideout.settings);
     }
 
-    private modifyHideoutConstructionTime(areas: IHideoutArea[]): void
+    private _modifyHideoutConstructionTime(areas: IHideoutArea[]): void
     {
         const constructionModifier: number = ModStorage.getField("ConstructionTimeModifier");
         const instantConstruction: boolean = ModStorage.getField("EnableInstantConstruction");
@@ -41,7 +41,7 @@ export default class HideoutPatch implements ServerPatch
         }
     }
 
-    private modifyHideoutProductionTime(crafts: IHideoutProduction[]): void
+    private _modifyHideoutProductionTime(crafts: IHideoutProduction[]): void
     {
         const productionModifier: number = ModStorage.getField("ProductionTimeModifier");
         const instantProduction: boolean = ModStorage.getField("EnableInstantProduction");
@@ -58,7 +58,7 @@ export default class HideoutPatch implements ServerPatch
         }
     }
 
-    private applyHideoutSettingsPatch(settings: IHideoutSettingsBase): void
+    private _applyHideoutSettingsPatch(settings: IHideoutSettingsBase): void
     {
         settings.generatorFuelFlowRate = ModStorage.getField("HideoutFuelUsageRate");
         settings.airFilterUnitFlowRate = ModStorage.getField("HideoutAirFilterUsageRate");
