@@ -13,11 +13,17 @@
     "HideoutGpuBoost": 1.0,
 
     "ExtendKeyUsageLimit": true,
+    "StretchPocketsVertically": false,
+    "StretchPocketsHorizontally": false,
 
-    "DisableFleaMarket": true,
     "FleaMarketAccessLevel": 20,
+    "DisableFleaMarket": true,
     "ExtendClothingFactions": true,
 
-    "ScavHealthMultiplier": 1.0
-
+    "ScavHealthMultiplier": 1.0,
+    "SpecialHealthMultiplier": 1.0,
+    "BossHealthMultiplier": 1.0,
+    "BossFollowerHealthMultiplier": 1.0,
+    "DisableFallDamage": false,
+    "DisableStatDrain": false
 }

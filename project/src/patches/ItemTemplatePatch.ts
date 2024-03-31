@@ -8,7 +8,6 @@ export default class ItemTemplatePatch implements ServerPatch
 {
     expiremental: boolean
 
-    // eslint-disable-next-line @typescript-eslint/brace-style
     constructor(expiremental?: boolean) { this.expiremental = expiremental; } 
 
     public enable(): boolean | void
@@ -22,7 +21,7 @@ export default class ItemTemplatePatch implements ServerPatch
         for (const item in table)
         {
             if (table[item]._parent == "5c99f98d86f7745c314214b3" && ModStorage.getField("ExtendKeyUsageLimit"))
-            { item["_props"].MaximumNumberOfUsage = 99; }
+            { table[item]._props.MaximumNumberOfUsage = 99; }
 
             if (table[item]._id == "557ffd194bdc2d28148b457f")
             {
