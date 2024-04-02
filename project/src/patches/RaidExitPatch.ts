@@ -29,7 +29,13 @@ export default class RaidExitPatch implements ServerPatch
             if (key != "base")
             {
                 const baseFile = maps[key].base;
-                const scavExits: string[] = LocationInfo.fetchExitNames(key)?.scav;
+                let scavExits: string[];
+
+                if (ModStorage.getField("PatchCustomExits"))
+                { scavExits = LocationInfo.fetchCustomExitNames(key)?.scav; }
+                else
+                { scavExits = LocationInfo.fetchExitNames(key)?.scav; }
+
                 scavExits.forEach(exit => {
                     baseFile.exits.push(this._createExit(exit, true, "None", 0));
                 });
@@ -39,9 +45,16 @@ export default class RaidExitPatch implements ServerPatch
 
     private _modifyPlayerExits(locations: ILocations, mapNames: Set<string>): void
     {
+        
+
         for (const key of mapNames)
         {
             const baseFile: ILocationBase = locations[key].base;
+
+            let customExits: string[] = [];
+            if (ModStorage.getField("PatchCustomExits"))
+            { customExits = LocationInfo.fetchCustomExitNames(mapNames[key])?.pmc; }
+
             for (const exit of baseFile.exits)
             {
                 exit.ExfiltrationType = "Individual";
@@ -55,6 +68,10 @@ export default class RaidExitPatch implements ServerPatch
                 if (ModStorage.getField("ForceExitsOpen")) { exit.Chance = 100; }
 
                 if (ModStorage.getField("ConvertCooperationExits")) { this._convertCoopExit(exit); }
+
+                // if this exit is not designated for the custom exit list, then disable it.
+                if (ModStorage.getField("PatchCustomExits") && customExits.indexOf(exit.Name) == -1)
+                { exit.Chance = 0; }
             }
         }
     }

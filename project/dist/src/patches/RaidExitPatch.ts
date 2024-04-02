@@ -55,6 +55,8 @@ export default class RaidExitPatch implements ServerPatch
                 if (ModStorage.getField("ForceExitsOpen")) { exit.Chance = 100; }
 
                 if (ModStorage.getField("ConvertCooperationExits")) { this._convertCoopExit(exit); }
+
+                console.log(exit.Name);
             }
         }
     }

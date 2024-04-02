@@ -237,4 +237,9 @@ export default class LocationInfo
 
         return { map: [], pmc: [], scav: [] };
     }
+
+    static fetchCustomExitNames(targetMap: string): { map: string[]; pmc: string[]; scav: string[]; }
+    {
+        return;
+    }
 }

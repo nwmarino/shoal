@@ -12,6 +12,94 @@
     "HideoutAirFilterUsageRate": 1.0,
     "HideoutGpuBoost": 1.0,
 
-    "ExtendKeyUsageLimit": true
+    "ExtendKeyUsageLimit": true,
+    "StretchPocketsVertically": false,
+    "StretchPocketsHorizontally": false,
 
+    "FleaMarketAccessLevel": 20,
+    "DisableFleaMarket": true,
+    "ExtendClothingFactions": true,
+
+    "ScavHealthMultiplier": 1.0,
+    "SpecialHealthMultiplier": 1.0,
+    "BossHealthMultiplier": 1.0,
+    "BossFollowerHealthMultiplier": 1.0,
+    "DisableFallDamage": false,
+    "DisableStatDrain": false,
+    "DisableSkillFatigue": false,
+
+    "TimeBeforeDeploy": 5,
+    "ScavengerModeCooldown": 1200,
+    "DisableScavengerMode": true,
+
+    "ExtractedExperienceMultiplier": 1.0,
+    "KilledExperienceMultiplier": 1.0,
+    "KillExperienceMultiplier": 1.0,
+
+    "AccessLabsWithoutCard": true,
+    "ExtendRaidTimerToHour": true,
+
+    "CustomsAirdropChance": 5.0,
+    "InterchangeAirdropChance": 5.0,
+    "LighthouseAirdropChance": 5.0,
+    "ReserveAirdropChance": 5.0,
+    "ShorelineAirdropChance": 5.0,
+    "StreetsAirdropChance": 5.0,
+    "WoodsAirdropChance": 5.0,
+
+    "CustomsGoonsChance": 10,
+
+    "CustomsReshalaChance": 10,
+    "CustomsReshalaFollowers": "4",
+    "CustomsReshalaLocations": "",
+
+    "CustomsCultistChance": 10,
+
+    "FactoryDayTagillaChance": 10,
+
+    "FactoryNightTagillaChance": 10,
+    "FactoryNightCultistChance": 10,
+
+    "InterchangeKillaChance": 10,
+    "InterchangeKillaLocations": "",
+
+    "LighthouseGoonsChance": 10,
+    "LighthouseGoonsLocations": "",
+
+    "ReserveGluharChance": 10,
+    "ReserveGluharLocations": "",
+    "ReserveGluharAssaultCount": "2",
+    "ReserveGluharSecurityCount": "2",
+    "ReserveGluharScoutCount": "2",
+
+    "ShorelineGoonsChance": 10,
+    "ShorelineSanitarChance": 10,
+    "ShorelineSanitarLocations": "",
+    "ShorelineSanitarFollowers": "2",
+    "ShorelineCultistChance": 10,
+
+    "StreetsKolontayChance": 10,
+    "StreetsKolontayLocations": "",
+    "StreetsKolontayAssaultCount": "2",
+    "StreetsKolontaySecurityCount": "2",
+
+    "StreetsKabanChance": 10,
+    "StreetsKabanSecurityCount": "2",
+    "StreetsKabanClose1Count": "1",
+    "StreetsKabanClose2Count": "1",
+    "StreetsKabanSniperCount": "2",
+
+    "WoodsGoonsChance": 10,
+    "WoodsShturmanChance": 10,
+    "WoodsShturmanFollowers": "2",
+    "WoodsCultistChance": 10,
+
+    "UsecBearRatio": 50,
+    "PmcFriendlyChance": 50,
+    "PmcMaxBackpackValue": 150000,
+    "PmcMaxVestValue": 100000,
+    "PmcMaxPocketValue": 50000,
+    "ScavengerToPmc": 15,
+    "RaiderToPmc": 15,
+    "RogueToPmc": 15
 }

@@ -2,7 +2,8 @@ import { DependencyContainer } from "tsyringe";
 import { IPostDBLoadMod } from "@spt-aki/models/external/IPostDBLoadMod";
 import { ILogger } from "@spt-aki/models/spt/utils/ILogger";
 import { LogTextColor } from "@spt-aki/models/spt/logging/LogTextColor";
-import { ItemTemplatePatch, HideoutPatch, RaidExitPatch, TradingPatch } from "./patches/PatchLib";
+import { BotPatch, GameplayPatch, HideoutPatch, ItemTemplatePatch,
+    RaidExitPatch, StatusPatch, TradingPatch } from "./patches/PatchLib";
 
 import ModStorage from "./models/ModStorage";
 import * as configJson from "./config/shoal.config.json";
@@ -14,12 +15,15 @@ export default class Mod implements IPostDBLoadMod
         const logger: ILogger = container.resolve<ILogger>("WinstonLogger");
         logger.logWithColor("Loading: shoal->server", LogTextColor.CYAN);
         ModStorage.loadStorage(container, configJson);
-        
+
         try
         {
-            new ItemTemplatePatch().enable();
+            new BotPatch().enable();
+            new GameplayPatch().enable();
             new HideoutPatch().enable();
+            new ItemTemplatePatch().enable();
             new RaidExitPatch().enable();
+            new StatusPatch().enable();
             new TradingPatch().enable();
         }
         catch (err: any)
