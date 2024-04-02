@@ -240,6 +240,173 @@ export default class LocationInfo
 
     static fetchCustomExitNames(targetMap: string): { map: string[]; pmc: string[]; scav: string[]; }
     {
-        return;
+        const sandboxExits = {
+            map: ["sandbox"],
+            pmc: [
+                "Unity_free_exit",
+                "Sandbox_VExit",
+                "Sniper_exit",
+                "Scav_coop_exit",
+                "Nakatani_stairs_free_exit"
+            ],
+            scav: []
+        }
+
+        const bigmapExits = {
+            map: ["bigmap"],
+            pmc: [
+                "Crossroads",
+                "Dorms V-Ex",
+                "EXFIL_ZB013" // under stronghold
+            ],
+            scav: [
+                "Shack", // military base cp
+                "Railroad To Military Base", // derailed train
+                "Railroad To Tarkov", // railroad near trailer park
+                "Warehouse 17", // near crackhouse
+                "Old Azs Gate", // old gas station gate
+                "Administration Gate" // near mil checkpoint
+            ]
+        }
+
+        const factoryExits = {
+            map: ["factory4_day", "factory4_night"],
+            pmc: [
+                "Cellars",
+                "Gate 3",
+                "Gate 0"
+            ],
+            scav: [
+                "Camera Bunker Door"
+            ]
+        }
+
+        const interchangeExits = {
+            map: ["interchange"],
+            pmc: [
+                "NW Exfil",
+                "SE Exfil",
+                "PP Exfil",
+                "Saferoom Exfil",
+                "Hole Exfill",
+                "Interchange Cooperation"
+            ],
+            scav: []
+        }
+
+        const laboratoryExits = {
+            map: ["laboratory"],
+            pmc: [
+                "lab_Parking_Gate",
+                "lab_Hangar_Gate",
+                "lab_Elevator_Med",
+                "lab_Under_Storage_Collector",
+                "lab_Elevator_Main",
+                "lab_Vent",
+                "lab_Elevator_Cargo"
+            ],
+            scav: []
+        }
+
+        const lighthouseExits = {
+            map: ["lighthouse"],
+            pmc: [
+                "EXFIL_Train",
+                "Alpinist_light",
+                "tunnel_shared", // side tunnel
+                "Nothern_Checkpoint", // north road
+                "Coastal_South_Road", // south road
+                "Shorl_free", // path to shoreline
+                "V-Ex_light"
+            ],
+            scav: [
+                "Scav_Underboat_Hideout" // sunken house
+            ]
+        }
+
+        const rezervbaseExits = {
+            map: ["rezervbase"],
+            pmc: [
+                "EXFIL_Train",
+                "Alpinist", // cliff descent
+                "EXFIL_ScavCooperation",
+                "EXFIL_Bunker",
+                "EXFIL_BUNKER_D2"
+            ],
+            scav: [
+                "Exit1", // hole in the wall
+                "Exit2" // heating pipe
+            ]
+        }
+
+        const shorelineExits = {
+            map: ["shoreline"],
+            pmc: [
+                "Tunnel",
+                "Pier Boat",
+                "Road to Customs",
+                "Lighthouse_pass", // path to lighthouse
+                "RedRebel_alp", // climber's trail
+                "Smugglers_Trail_coop",
+                "Shorl_V-Ex"
+            ],
+            scav: [
+                "RWing Gym Entrance"
+            ]
+        }
+
+        const tarkovstreetsExits = {
+            map: ["tarkovstreets"],
+            pmc: [
+                "E1", // stylobate elevator
+                "E2", // sewer river
+                "E3", // damaged house
+                "E4", // crash site
+                "E7_car", // taxi
+                "E9_sniper" // klimov
+            ],
+            scav: [
+                "scav_e5", // arch
+                "scav_e7", // cardinal apartments
+                "scav_e8" // klimov mall
+            ]
+        }
+
+        const woodsExits = {
+            map: ["woods"],
+            pmc: [
+                "ZB-016",
+                "Outskirts",
+                "UN Roadblock",
+                "RUAF Gate",
+                "ZB-014",
+                "South V-Ex",
+                "Factory Gate",
+                "un-sec"
+            ],
+            scav: [
+                "Dead Man's Place"
+            ]
+        }
+
+        const maps = [
+            sandboxExits,
+            bigmapExits,
+            factoryExits,
+            interchangeExits,
+            laboratoryExits,
+            lighthouseExits,
+            rezervbaseExits,
+            shorelineExits,
+            tarkovstreetsExits,
+            woodsExits
+        ]
+
+        maps.forEach(exitSet =>
+            {
+                if (exitSet.map.includes(targetMap)) return exitSet;
+            });
+    
+            return { map: [], pmc: [], scav: [] };
     }
 }
