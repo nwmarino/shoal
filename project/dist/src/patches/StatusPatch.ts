@@ -68,8 +68,13 @@ export default class StatusPatch implements ServerPatch
 
             for (const bodyPart in bodyParts)
             {
-                bodyParts[bodyPart].min *= multiplier;
-                bodyParts[bodyPart].max *= multiplier;
+                // eslint-disable-next-line no-prototype-builtins
+                if (bodyParts.hasOwnProperty(bodyPart))
+                {
+                    bodyParts[bodyPart].min *= multiplier;
+                    bodyParts[bodyPart].max *= multiplier;
+                }
+                
             }
         }
     }

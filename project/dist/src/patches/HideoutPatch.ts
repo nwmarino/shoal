@@ -18,7 +18,6 @@ export default class HideoutPatch implements ServerPatch
         const tables = ModStorage.fetchContainer(true) as IDatabaseTables;
         this._modifyHideoutConstructionTime(tables.hideout.areas)
         this._modifyHideoutProductionTime(tables.hideout.production);
-        this._applyHideoutSettingsPatch(tables.hideout.settings);
     }
 
     private _modifyHideoutConstructionTime(areas: IHideoutArea[]): void
@@ -57,12 +56,4 @@ export default class HideoutPatch implements ServerPatch
             });
         }
     }
-
-    private _applyHideoutSettingsPatch(settings: IHideoutSettingsBase): void
-    {
-        settings.generatorFuelFlowRate = ModStorage.getField("HideoutFuelUsageRate");
-        settings.airFilterUnitFlowRate = ModStorage.getField("HideoutAirFilterUsageRate");
-        settings.gpuBoostRate = ModStorage.getField("HideoutGpuBoost");
-    }
-
 }

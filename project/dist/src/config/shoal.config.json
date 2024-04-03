@@ -1,24 +1,19 @@
 {
-    "PatchScavengerExits": true,
-    "AllowExitFromAnySide": true,
-    "ForceExitsOpen": true,
-    "ConvertCooperationExits": true,
+    "PatchAllScavengerExits": false,
+    "AllowExitFromAnySide": false,
+    "ForceExitsOpen": false,
+    "ConvertCooperationExits": false,
+    "PatchCustomExits": false,
 
-    "EnableInstantConstruction": true,
-    "EnableInstantProduction": true,
+    "EnableInstantConstruction": false,
+    "EnableInstantProduction": false,
     "ConstructionTimeModifier": 1.0,
     "ProductionTimeModifier": 1.0,
-    "HideoutFuelUsageRate": 1.0,
-    "HideoutAirFilterUsageRate": 1.0,
-    "HideoutGpuBoost": 1.0,
 
-    "ExtendKeyUsageLimit": true,
-    "StretchPocketsVertically": false,
-    "StretchPocketsHorizontally": false,
+    "ExtendKeyUsageLimit": false,
 
-    "FleaMarketAccessLevel": 20,
-    "DisableFleaMarket": true,
-    "ExtendClothingFactions": true,
+    "FleaMarketAccessLevel": 15,
+    "DisableFleaMarket": false,
 
     "ScavHealthMultiplier": 1.0,
     "SpecialHealthMultiplier": 1.0,
@@ -28,16 +23,15 @@
     "DisableStatDrain": false,
     "DisableSkillFatigue": false,
 
-    "TimeBeforeDeploy": 5,
-    "ScavengerModeCooldown": 1200,
-    "DisableScavengerMode": true,
+    "TimeBeforeDeploy": 20,
+    "ScavengerModeCooldown": 600,
+    "DisableScavengerMode": false,
 
     "ExtractedExperienceMultiplier": 1.0,
     "KilledExperienceMultiplier": 1.0,
-    "KillExperienceMultiplier": 1.0,
 
-    "AccessLabsWithoutCard": true,
-    "ExtendRaidTimerToHour": true,
+    "AccessLabsWithoutCard": false,
+    "ExtendRaidTimerToHour": false,
 
     "CustomsAirdropChance": 5.0,
     "InterchangeAirdropChance": 5.0,
@@ -51,7 +45,7 @@
 
     "CustomsReshalaChance": 10,
     "CustomsReshalaFollowers": "4",
-    "CustomsReshalaLocations": "",
+    "CustomsReshalaLocations": "ZoneDormitory,ZoneGasStation,ZoneScavBase",
 
     "CustomsCultistChance": 10,
 
@@ -61,25 +55,25 @@
     "FactoryNightCultistChance": 10,
 
     "InterchangeKillaChance": 10,
-    "InterchangeKillaLocations": "",
+    "InterchangeKillaLocations": "ZoneCenterBot,ZoneCenter,ZoneOLI,ZoneIDEA,ZoneGoshan",
 
     "LighthouseGoonsChance": 10,
-    "LighthouseGoonsLocations": "",
+    "LighthouseGoonsLocations": "Zone_TreatmentContainers,Zone_Chalet",
 
     "ReserveGluharChance": 10,
-    "ReserveGluharLocations": "",
+    "ReserveGluharLocations": "ZoneRailStrorage,ZonePTOR2,ZoneBarrack,ZoneSubStorage",
     "ReserveGluharAssaultCount": "2",
     "ReserveGluharSecurityCount": "2",
     "ReserveGluharScoutCount": "2",
 
     "ShorelineGoonsChance": 10,
     "ShorelineSanitarChance": 10,
-    "ShorelineSanitarLocations": "",
+    "ShorelineSanitarLocations": "ZoneGreenHouses,ZoneSanatorium1,ZoneGreenHouses,ZoneSanatorium2,ZonePort",
     "ShorelineSanitarFollowers": "2",
     "ShorelineCultistChance": 10,
 
     "StreetsKolontayChance": 10,
-    "StreetsKolontayLocations": "",
+    "StreetsKolontayLocations": "ZoneClimova,ZoneMvd",
     "StreetsKolontayAssaultCount": "2",
     "StreetsKolontaySecurityCount": "2",
 
@@ -96,9 +90,6 @@
 
     "UsecBearRatio": 50,
     "PmcFriendlyChance": 50,
-    "PmcMaxBackpackValue": 150000,
-    "PmcMaxVestValue": 100000,
-    "PmcMaxPocketValue": 50000,
     "ScavengerToPmc": 15,
     "RaiderToPmc": 15,
     "RogueToPmc": 15

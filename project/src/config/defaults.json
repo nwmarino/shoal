@@ -14,6 +14,7 @@
 
     "FleaMarketAccessLevel": 15,
     "DisableFleaMarket": false,
+    "ExtendClothingFactions": false,
 
     "ScavHealthMultiplier": 1.0,
     "SpecialHealthMultiplier": 1.0,

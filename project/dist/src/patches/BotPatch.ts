@@ -165,9 +165,6 @@ export default class BotPatch implements ServerPatch
     {
         pmc.isUsec = ModStorage.getField("UsecBearRatio");
         pmc.chanceSameSideIsHostilePercent = ModStorage.getField("PmcFriendlyChance");
-        pmc.maxBackpackLootTotalRub = ModStorage.getField("PmcMaxBackpackValue");
-        pmc.maxVestLootTotalRub = ModStorage.getField("PmcMaxVestValue");
-        pmc.maxPocketLootTotalRub = ModStorage.getField("PmcMaxPocketValue");
 
         pmc.convertIntoPmcChance.assault.min = ModStorage.getField("ScavengerToPmc");
         pmc.convertIntoPmcChance.assault.max = ModStorage.getField("ScavengerToPmc");

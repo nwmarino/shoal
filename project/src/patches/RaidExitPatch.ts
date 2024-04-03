@@ -18,7 +18,8 @@ export default class RaidExitPatch implements ServerPatch
         const tables = ModStorage.fetchContainer(true) as IDatabaseTables;
         const maps: ILocations = tables.locations;
         const mapNames: Set<string> = LocationInfo.fetchMapNames();
-        if (ModStorage.getField("PatchScavengerExits")) { this._importScavengerExits(maps); }
+        if (ModStorage.getField("PatchAllScavengerExits") || ModStorage.getField("PatchCustomExits"))
+        { this._importScavengerExits(maps); }
         this._modifyPlayerExits(maps, mapNames);
     }
 
@@ -29,31 +30,36 @@ export default class RaidExitPatch implements ServerPatch
             if (key != "base")
             {
                 const baseFile = maps[key].base;
-                let scavExits: string[];
-
+                let allMapExits: { map: string[]; pmc: string[]; scav: string[]; }
                 if (ModStorage.getField("PatchCustomExits"))
-                { scavExits = LocationInfo.fetchCustomExitNames(key)?.scav; }
+                { allMapExits = LocationInfo.fetchCustomExitNames(key); }
                 else
-                { scavExits = LocationInfo.fetchExitNames(key)?.scav; }
+                { allMapExits = LocationInfo.fetchExitNames(key); }
+                
+                const scavExits: string[] = allMapExits?.scav;
 
-                scavExits.forEach(exit => {
-                    baseFile.exits.push(this._createExit(exit, true, "None", 0));
-                });
+                console.log(scavExits);
+
+                if (scavExits)
+                    for (const exit in scavExits)
+                        baseFile.exits.push(this._createExit(scavExits[exit], true, "None", 0));
             }
         }
     }
 
     private _modifyPlayerExits(locations: ILocations, mapNames: Set<string>): void
     {
-        
-
         for (const key of mapNames)
         {
             const baseFile: ILocationBase = locations[key].base;
 
-            let customExits: string[] = [];
+            let customPmcExits: string[] = [];
+            let customScavExits: string[] = [];
             if (ModStorage.getField("PatchCustomExits"))
-            { customExits = LocationInfo.fetchCustomExitNames(mapNames[key])?.pmc; }
+            { 
+                customPmcExits = LocationInfo.fetchCustomExitNames(key)?.pmc;
+                customScavExits = LocationInfo.fetchCustomExitNames(key)?.scav;
+            }
 
             for (const exit of baseFile.exits)
             {
@@ -70,8 +76,9 @@ export default class RaidExitPatch implements ServerPatch
                 if (ModStorage.getField("ConvertCooperationExits")) { this._convertCoopExit(exit); }
 
                 // if this exit is not designated for the custom exit list, then disable it.
-                if (ModStorage.getField("PatchCustomExits") && customExits.indexOf(exit.Name) == -1)
-                { exit.Chance = 0; }
+                if (ModStorage.getField("PatchCustomExits"))
+                    if (customPmcExits.indexOf(exit.Name) == -1 && customScavExits.indexOf(exit.Name) == -1)
+                        exit.Chance = 0;
             }
         }
     }

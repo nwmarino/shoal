@@ -230,12 +230,9 @@ export default class LocationInfo
             woodsExits
         ]
 
-        maps.forEach(exitSet =>
-        {
-            if (exitSet.map.includes(targetMap)) return exitSet;
-        });
-
-        return { map: [], pmc: [], scav: [] };
+        for (const m in maps)
+            if (maps[m].map.includes(targetMap))
+                return maps[m];
     }
 
     static fetchCustomExitNames(targetMap: string): { map: string[]; pmc: string[]; scav: string[]; }
@@ -402,11 +399,8 @@ export default class LocationInfo
             woodsExits
         ]
 
-        maps.forEach(exitSet =>
-            {
-                if (exitSet.map.includes(targetMap)) return exitSet;
-            });
-    
-            return { map: [], pmc: [], scav: [] };
+        for (const m in maps)
+            if (maps[m].map.includes(targetMap))
+                return maps[m];
     }
 }

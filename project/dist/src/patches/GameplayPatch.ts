@@ -37,7 +37,6 @@ export default class GameplayPatch implements ServerPatch
         
         globals.exp.match_end.survivedMult = ModStorage.getField("ExtractedExperienceMultiplier");
         globals.exp.match_end.killedMult = ModStorage.getField("KilledExperienceMultiplier");
-        globals.exp.kill = ModStorage.getField("KillExperienceMultiplier");
         
         if (ModStorage.getField("DisableSkillFatigue"))
         {

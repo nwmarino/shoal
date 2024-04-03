@@ -22,18 +22,6 @@ export default class ItemTemplatePatch implements ServerPatch
         {
             if (table[item]._parent == "5c99f98d86f7745c314214b3" && ModStorage.getField("ExtendKeyUsageLimit"))
             { table[item]._props.MaximumNumberOfUsage = 99; }
-
-            if (table[item]._id == "557ffd194bdc2d28148b457f")
-            {
-                for (const pocket in table[item]._props.Grids)
-                {
-                    if (ModStorage.getField("StretchPocketsVertically"))
-                    { table[item]._props.Grids[pocket]._props.cellsV = 2; }
-
-                    if (ModStorage.getField("StretchPocketsHorizontally"))
-                    { table[item]._props.Grids[pocket]._props.cellsH = 2; }
-                }
-            }
         }
 
     }
