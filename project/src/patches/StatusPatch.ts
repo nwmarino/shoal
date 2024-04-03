@@ -56,25 +56,22 @@ export default class StatusPatch implements ServerPatch
 
             if (botType.startsWith("assault") || botType.startsWith("cursedassault"))
             { multiplier = ModStorage.getField("ScavHealthMultiplier"); }
-
             else if (botType.startsWith("exusec") || botType.startsWith("pmcbot"))
             { multiplier = ModStorage.getField("SpecialHealthMultiplier"); }
-
             else if (botType.startsWith("boss"))
             { multiplier = ModStorage.getField("BossHealthMultiplier"); }
-
             else if (botType.startsWith("follower"))
             { multiplier = ModStorage.getField("BossFollowerHealthMultiplier"); }
+            else
+            { multiplier = 1.0; }
 
-            for (const bodyPart in bodyParts)
+            if (multiplier != 1.0)
             {
-                // eslint-disable-next-line no-prototype-builtins
-                if (bodyParts.hasOwnProperty(bodyPart))
+                for (const bodyPart in bodyParts)
                 {
                     bodyParts[bodyPart].min *= multiplier;
-                    bodyParts[bodyPart].max *= multiplier;
+                    bodyParts[bodyPart].max *= multiplier;            
                 }
-                
             }
         }
     }

@@ -38,8 +38,6 @@ export default class RaidExitPatch implements ServerPatch
                 
                 const scavExits: string[] = allMapExits?.scav;
 
-                console.log(scavExits);
-
                 if (scavExits)
                     for (const exit in scavExits)
                         baseFile.exits.push(this._createExit(scavExits[exit], true, "None", 0));
